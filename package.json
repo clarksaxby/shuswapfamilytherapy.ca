@@ -36,8 +36,10 @@
     "@twostoryrobot/prettier": "^2.0.0",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-react": "^7.10.0",
+    "gatsby-plugin-eslint": "^1.0.3",
     "husky": "^1.0.0-rc.9",
     "prettier": "^1.13.6"
   }
