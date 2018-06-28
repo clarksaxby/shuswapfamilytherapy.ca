@@ -1,0 +1,46 @@
+{
+  "name": "shuswapfamilytherapy.ca",
+  "description": "Gatsby website for Kendra of shuswapfamilytherapy.ca",
+  "version": "1.0.0",
+  "author": "Caleb Sharp <calebissharp@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint '**/*.js'",
+    "prettier": "prettier --write '**/*.js'",
+    "prettier-check": "prettier --list-different '**/*.js'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier-check && npm run eslint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TwoStoryRobot/shuswapfamilytherapy.ca"
+  },
+  "bugs": {
+    "url": "https://github.com/TwoStoryRobot/shuswapfamilytherapy.ca/issues"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.247",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-react-helmet": "^2.0.10",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "@twostoryrobot/eslint-config": "^2.2.0",
+    "@twostoryrobot/prettier": "^2.0.0",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-react": "^7.10.0",
+    "gatsby-plugin-eslint": "^1.0.3",
+    "husky": "^1.0.0-rc.9",
+    "prettier": "^1.13.6"
+  }
+}
