@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint '**/*.js'",
     "prettier": "prettier --write '**/*.js'",
-    "prettier-check": "prettier --list-different '**/*.js'"
+    "prettier-check": "prettier --list-different '**/*.js'",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "husky": {
     "hooks": {
@@ -29,9 +30,13 @@
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/react": "3.2.14",
     "@twostoryrobot/eslint-config": "^2.2.0",
     "@twostoryrobot/prettier": "^2.0.0",
     "eslint": "^5.0.1",
