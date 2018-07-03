@@ -43,9 +43,9 @@ const ButtonStyle = styled.button`
     outline: none;
   }
 
-  ${({ type }) =>
-    type &&
-    type === 'primary' &&
+  ${({ color }) =>
+    color &&
+    color === 'primary' &&
     css`
       box-shadow: none;
       background-color: #a3a9e7;
@@ -73,9 +73,9 @@ const Icon = styled(FontAwesomeIcon)`
     transition-delay: 0.2s;
   }
 
-  ${({ type }) =>
-    type &&
-    type === 'primary' &&
+  ${({ color }) =>
+    color &&
+    color === 'primary' &&
     css`
       ${ButtonStyle}:hover & {
         color: #dde1eb !important;
@@ -91,15 +91,15 @@ const IconRight = styled(Icon)`
 const Button = props => {
   return (
     <ButtonStyle {...props}>
-      {props.icon && <Icon icon={props.icon} type={props.type} />}
+      {props.icon && <Icon icon={props.icon} color={props.color} />}
       {props.children}
-      {props.next && <IconRight icon={faLongArrowAltRight} type={props.type} />}
+      {props.next && <IconRight icon={faLongArrowAltRight} color={props.color} />}
     </ButtonStyle>
   )
 }
 
 Button.propTypes = {
-  type: PropTypes.string,
+  color: PropTypes.string,
   icon: PropTypes.any,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
