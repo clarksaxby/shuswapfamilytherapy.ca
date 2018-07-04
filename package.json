@@ -51,6 +51,7 @@
     "eslint-plugin-react": "^7.10.0",
     "gatsby-plugin-eslint": "^1.0.3",
     "husky": "^1.0.0-rc.9",
-    "prettier": "^1.13.6"
+    "prettier": "^1.13.6",
+    "storybook-host": "^5.0.0"
   }
 }
