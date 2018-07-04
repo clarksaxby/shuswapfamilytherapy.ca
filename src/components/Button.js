@@ -93,7 +93,9 @@ const Button = props => {
     <ButtonStyle {...props}>
       {props.icon && <Icon icon={props.icon} color={props.color} />}
       {props.children}
-      {props.next && <IconRight icon={faLongArrowAltRight} color={props.color} />}
+      {props.next && (
+        <IconRight icon={faLongArrowAltRight} color={props.color} />
+      )}
     </ButtonStyle>
   )
 }
