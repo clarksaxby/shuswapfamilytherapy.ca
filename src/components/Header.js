@@ -7,6 +7,20 @@ const HeaderContainer = styled.header`
   text-align: center;
   margin: 0 auto;
   font-family: 'Source Sans Pro', Helvetica, sans-serif;
+
+  @media screen and (max-width: 1280px) {
+    padding: 5rem 3rem 3rem 3rem;
+  }
+
+  @media screen and (max-width: 736px) {
+    padding: 3rem 2rem 1rem 2rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 3rem 1.5rem 1rem 1.5rem;
+  }
 `
 
 const HeaderTitle = styled.h1`
