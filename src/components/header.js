@@ -1,38 +1,56 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+const HeaderContainer = styled.header`
+  padding: 7rem 6rem 5rem 6rem;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+`
+
+const HeaderTitle = styled.h1`
+  position: relative;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 20rem;
+    height: 3px;
+    margin-left: -10rem;
+    background-image: linear-gradient(90deg, #a2cedc, #aa8fff);
+  }
+`
+
+const HeaderText = styled.p`
+  position: relative;
+  font-size: 1.25rem;
+  margin-top: -1rem;
+
+  @media screen and (max-width: 736px) {
+    font-size: 1rem;
+    margin-top: -0.25rem;
+  }
+`
+
+const Header = props => (
+  <HeaderContainer>
+    <HeaderTitle>{props.title}</HeaderTitle>
+    <HeaderText>{props.children}</HeaderText>
+  </HeaderContainer>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 }
 
 export default Header
