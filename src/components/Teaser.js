@@ -57,7 +57,7 @@ const TeaserButton = styled(Button)`
 
 const Teaser = props => {
   return (
-    <TeaserWrapper {...props}>
+    <TeaserWrapper>
       <ImageZoomWrapper>
         <ImageStyleAfter>
           <ImageStyle src={props.img} alt="Shuswap Family Therapy" />

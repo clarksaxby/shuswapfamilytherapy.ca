@@ -10,7 +10,7 @@ const text =
 
 storiesOf('Teaser', module)
   .addDecorator(host({ width: 385, height: 800 }))
-  .add('Default', () => <Teaser />)
-  .add('with test picture', () => (
+  .add('Default with no props', () => <Teaser />)
+  .add('with all props', () => (
     <Teaser img={img} btnTitle="Details" imgText={text} />
   ))
