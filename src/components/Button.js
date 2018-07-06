@@ -44,23 +44,39 @@ const ButtonStyle = styled.button`
   }
 
   ${({ color }) =>
-    color &&
-    color === 'primary' &&
-    css`
-      box-shadow: none;
-      background-color: #a3a9e7;
-      color: #ffffff !important;
-
-      &:hover {
-        background-color: #b0b6f3;
-        color: #ffffff !important;
+    (color === 'primary' &&
+      css`
         box-shadow: none;
-      }
+        background-color: #a3a9e7;
+        color: #ffffff !important;
 
-      &:active {
-        background-color: #8d95e3;
-      }
-    `};
+        &:hover {
+          background-color: #b0b6f3;
+          color: #ffffff !important;
+          box-shadow: none;
+        }
+
+        &:active {
+          background-color: #8d95e3;
+        }
+      `) ||
+    (color === 'white' &&
+      css`
+        color: #ffffff !important;
+        box-shadow: inset 0 0 0 3px #ffffff;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 0 0 3px #ffffff;
+          color: #ffffff !important;
+        }
+
+        &:active {
+          background-color: rgba(255, 255, 255, 0.35);
+          box-shadow: inset 0 0 0 3px #ffffff;
+          color: #ffffff !important;
+        }
+      `)};
 `
 
 const Icon = styled(FontAwesomeIcon)`
@@ -74,13 +90,20 @@ const Icon = styled(FontAwesomeIcon)`
   }
 
   ${({ color }) =>
-    color &&
-    color === 'primary' &&
-    css`
-      ${ButtonStyle}:hover & {
-        color: #dde1eb !important;
-      }
-    `};
+    (color === 'primary' &&
+      css`
+        ${ButtonStyle}:hover & {
+          color: #dde1eb !important;
+        }
+      `) ||
+    (color === 'white' &&
+      css`
+        color: #ffffff;
+
+        ${ButtonStyle}:hover & {
+          color: #ffffff !important;
+        }
+      `)};
 `
 
 const IconRight = styled(Icon)`
