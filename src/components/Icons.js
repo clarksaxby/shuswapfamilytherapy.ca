@@ -8,14 +8,16 @@ const IconsStyle = styled.div`
   border: 1px solid;
   border-radius: 50%;
   padding: 17px 17px;
-  color: white;
-  opacity: 0.5;
+  border-color: rgba(255, 255, 255, 0.5);
 
   &: hover {
     opacity: 1;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 `
-const Icon = styled(FontAwesomeIcon)``
+const Icon = styled(FontAwesomeIcon)`
+  color: white;
+`
 // width: 50px;
 // height: 50px;
 
