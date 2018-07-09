@@ -31,13 +31,19 @@ const Icons = props => {
   return (
     <IconsWrapper {...props}>
       <IconsStyle>
-        <Icon icon={faFacebookF} />
+        <a href="https://www.facebook.com/shuswapfamilytherapy">
+          <Icon icon={faFacebookF} />
+        </a>
       </IconsStyle>
       <IconsStyle>
-        <Icon icon={faEnvelope} />
+        <a href="mailto:k2kieft@gmail.com">
+          <Icon icon={faEnvelope} />
+        </a>
       </IconsStyle>
       <IconsStyle>
-        <Icon icon={faPhone} />
+        <a href="tel:1-250-515-1003">
+          <Icon icon={faPhone} />
+        </a>
       </IconsStyle>
     </IconsWrapper>
   )
