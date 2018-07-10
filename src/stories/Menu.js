@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 
 import Menu, { MenuItem } from '../components/Menu'
 
-const menuAction = () => action('Menu clicked')
+const menuAction = item => action(`${item} clicked`)
 
 storiesOf('Menu', module)
   .add('Empty', () => <Menu />)
@@ -17,8 +17,10 @@ storiesOf('Menu', module)
   ))
   .add('With logo', () => (
     <Menu logo="Lorem Ipsum Co.">
-      <MenuItem>Home</MenuItem>
-      <MenuItem current>About</MenuItem>
-      <MenuItem onClick={menuAction()}>Contact</MenuItem>
+      <MenuItem onClick={menuAction('Home')}>Home</MenuItem>
+      <MenuItem current onClick={menuAction('About')}>
+        About
+      </MenuItem>
+      <MenuItem onClick={menuAction('Contact')}>Contact</MenuItem>
     </Menu>
   ))
