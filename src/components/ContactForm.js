@@ -29,6 +29,7 @@ const InputStyleRight = styled(Input)`
   grid-row-start: 2;
 `
 const TextareaStyle = styled(Textarea)`
+  color: white;
   grid-column: 2 / 6;
   grid-row: 3 / span 1;
   grid-row-start: 3;
@@ -49,7 +50,7 @@ class ContactForm extends React.Component {
           <InputStyleLeft placeholder="Name" />
           <InputStyleRight placeholder="Email" />
 
-          <TextareaStyle />
+          <TextareaStyle placeholder="Message" />
           <ButtonStyle color="white">Send</ButtonStyle>
         </FormWrapper>
       </ContactFormWrapper>

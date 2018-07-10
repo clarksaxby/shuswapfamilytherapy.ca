@@ -23,5 +23,11 @@ storiesOf('Header', module)
       color="white"
       title="Fanny pack whatever"
       style={{ backgroundColor: '#90B6DF' }}
-    />
+    >
+      Succulents tote bag subway tile etsy man braid butcher, bespoke retro
+      pitchfork. Iceland franzen readymade gentrify bushwick succulents synth
+      hammock kogi beard. Bespoke beard sustainable deep v, seitan before they
+      sold out ethical direct trade biodiesel echo park 90s iceland poke
+      hammock.
+    </Header>
   ))
