@@ -9,28 +9,30 @@ import Textarea from './TextArea'
 const ContactFormWrapper = styled.div``
 const FormWrapper = styled.form`
   display: grid;
-  grid-template-columns: 1fr 0.1fr 0.1fr 1fr;
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 1fr 0.25fr 0.25fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 4fr 1fr 0.5fr;
   grid-gap: 20px 20px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  justify-content: space-evenly;
-  align-content: space-around;
+  border-top: 1px solid #dde1eb;
+  border-bottom: 1px solid #dde1eb;
 `
 const InputStyleLeft = styled(Input)`
   color: white;
-  grid-column: 1 / span 2;
+  grid-column: 2 / span 2;
+  grid-row-start: 2;
 `
 const InputStyleRight = styled(Input)`
   color: white;
-  grid-column: 3 / span 2;
+  grid-column: 4 / span 2;
+  grid-row-start: 2;
 `
 const TextareaStyle = styled(Textarea)`
-  grid-column: 1 / -1;
-  grid-row: 2 / span 1;
+  grid-column: 2 / 6;
+  grid-row: 3 / span 1;
+  grid-row-start: 3;
 `
 const ButtonStyle = styled(Button)`
-  grid-column: 2 / span 2;
+  grid-column: 3 / span 2;
+  grid-row-start: 4;
 `
 
 class ContactForm extends React.Component {
