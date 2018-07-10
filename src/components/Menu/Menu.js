@@ -91,12 +91,12 @@ class Menu extends React.Component {
     super(props)
   }
 
-  handleMenuItemClick = (index, handler = () => {}) => () => {
+  handleMenuItemClick = (index, handler) => () => {
     this.setState({
       currentItem: index,
     })
 
-    handler()
+    if (handler) handler()
   }
 
   toggle = () => {
