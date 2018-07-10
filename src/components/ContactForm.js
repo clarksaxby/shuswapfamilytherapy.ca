@@ -36,12 +36,18 @@ const ButtonStyle = styled(Button)`
 class ContactForm extends React.Component {
   render() {
     return (
-      <div>
+      <ContactFormWrapper>
         <Header title="Make an Appointment">
           #3-781 Marine Park Drive Salmon Arm, BC V1E2W7
         </Header>
-        <Button color="white">Send</Button>
-      </div>
+        <FormWrapper>
+          <InputStyleLeft placeholder="Name" />
+          <InputStyleRight placeholder="Email" />
+
+          <TextareaStyle />
+          <ButtonStyle color="white">Send</ButtonStyle>
+        </FormWrapper>
+      </ContactFormWrapper>
     )
   }
 }
