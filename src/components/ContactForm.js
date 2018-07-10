@@ -7,6 +7,9 @@ import Input from './Input'
 import Textarea from './TextArea'
 
 const ContactFormWrapper = styled.div``
+// const HeaderStyle = styled(Header)`
+//   color: white;
+// `
 const FormWrapper = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr 0.25fr 0.25fr 1fr 1fr;
@@ -39,7 +42,7 @@ class ContactForm extends React.Component {
   render() {
     return (
       <ContactFormWrapper>
-        <Header title="Make an Appointment">
+        <Header color="White" title="Make an Appointment">
           #3-781 Marine Park Drive Salmon Arm, BC V1E2W7
         </Header>
         <FormWrapper>

@@ -18,3 +18,10 @@ storiesOf('Header', module)
       Proin vel rhoncus mauris. Quisque mattis dictum etiam.
     </Header>
   ))
+  .add('With white text', () => (
+    <Header
+      color="white"
+      title="Fanny pack whatever"
+      style={{ backgroundColor: '#90B6DF' }}
+    />
+  ))
