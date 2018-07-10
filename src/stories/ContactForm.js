@@ -5,5 +5,5 @@ import { host } from 'storybook-host'
 import ContactForm from '../components/ContactForm'
 
 storiesOf('Contact Form', module)
-  .addDecorator(host({ background: '#9088D9' }))
+  .addDecorator(host({ background: '#90B6DF' }))
   .add('Default empty form', () => <ContactForm />)
