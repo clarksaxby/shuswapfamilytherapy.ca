@@ -50,47 +50,24 @@ const ButtonStyle = styled(Button)`
   padding: 0px;
 `
 
-class ContactForm extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { name: '', email: '', message: '' }
-
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(value, field) {
-    this.setState({ [field]: value })
-  }
-
-  render() {
-    return (
-      <ContactFormWrapper>
-        <Header color="white" title="Make an Appointment">
-          #3-781 Marine Park Drive, Salmon Arm, BC V1E2W7
-        </Header>
-        <FormWrapper>
-          <InputStyleLeft
-            onChange={e => this.handleChange(e.target.value, 'name')}
-            placeholder="Name"
-            value={this.state.name}
-          />
-
-          <InputStyleRight
-            onChange={e => this.handleChange(e.target.value, 'email')}
-            placeholder="Email"
-            value={this.state.email}
-          />
-
-          <TextareaStyle
-            onChange={e => this.handleChange(e.target.value, 'message')}
-            placeholder="Message"
-            value={this.state.message}
-          />
-          <ButtonStyle color="white">Send</ButtonStyle>
-        </FormWrapper>
-      </ContactFormWrapper>
-    )
-  }
+const ContactForm = () => {
+  return (
+    <ContactFormWrapper>
+      <Header color="white" title="Make an Appointment">
+        #3-781 Marine Park Drive, Salmon Arm, BC V1E2W7
+      </Header>
+      {/*mailhound key needs to change for Kendra*/}
+      <FormWrapper
+        method="POST"
+        action="https://mailhound.twostoryrobot.com?key=monika"
+      >
+        <InputStyleLeft placeholder="Name" name="name" />
+        <InputStyleRight placeholder="Email" name="email" />
+        <TextareaStyle placeholder="Message" name="message" />
+        <ButtonStyle color="white">Send</ButtonStyle>
+      </FormWrapper>
+    </ContactFormWrapper>
+  )
 }
 
 export default ContactForm
