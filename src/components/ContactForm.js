@@ -22,21 +22,32 @@ const InputStyleLeft = styled(Input)`
   color: white;
   grid-column: 2 / span 2;
   grid-row-start: 2;
+  &::-webkit-input-placeholder {
+    color: white;
+  }
 `
 const InputStyleRight = styled(Input)`
   color: white;
   grid-column: 4 / span 2;
   grid-row-start: 2;
+  &::-webkit-input-placeholder {
+    color: white;
+  }
 `
 const TextareaStyle = styled(Textarea)`
   color: white;
   grid-column: 2 / 6;
   grid-row: 3 / span 1;
   grid-row-start: 3;
+
+  &::-webkit-input-placeholder {
+    color: white;
+  }
 `
 const ButtonStyle = styled(Button)`
   grid-column: 3 / span 2;
   grid-row-start: 4;
+  padding: 0px;
 `
 
 class ContactForm extends React.Component {
