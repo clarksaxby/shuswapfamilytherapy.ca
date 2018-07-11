@@ -40,17 +40,41 @@ const ButtonStyle = styled(Button)`
 `
 
 class ContactForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { name: '', email: '', message: '' }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(value, field) {
+    this.setState({ [field]: value })
+  }
+
   render() {
     return (
       <ContactFormWrapper>
-        <Header color="White" title="Make an Appointment">
-          #3-781 Marine Park Drive Salmon Arm, BC V1E2W7
+        <Header color="white" title="Make an Appointment">
+          #3-781 Marine Park Drive, Salmon Arm, BC V1E2W7
         </Header>
         <FormWrapper>
-          <InputStyleLeft placeholder="Name" />
-          <InputStyleRight placeholder="Email" />
+          <InputStyleLeft
+            onChange={e => this.handleChange(e.target.value, 'name')}
+            placeholder="Name"
+            value={this.state.name}
+          />
 
-          <TextareaStyle placeholder="Message" />
+          <InputStyleRight
+            onChange={e => this.handleChange(e.target.value, 'email')}
+            placeholder="Email"
+            value={this.state.email}
+          />
+
+          <TextareaStyle
+            onChange={e => this.handleChange(e.target.value, 'message')}
+            placeholder="Message"
+            value={this.state.message}
+          />
           <ButtonStyle color="white">Send</ButtonStyle>
         </FormWrapper>
       </ContactFormWrapper>
