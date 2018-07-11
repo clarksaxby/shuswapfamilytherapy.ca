@@ -16,7 +16,7 @@ const IconsStyle = styled.div`
   border-color: rgba(255, 255, 255, 0.35);
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   text-align: center;
-  &: hover {
+  &:hover {
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     background-color: rgba(255, 255, 255, 0.35);
     border-color: rgba(255, 255, 255, 1);
