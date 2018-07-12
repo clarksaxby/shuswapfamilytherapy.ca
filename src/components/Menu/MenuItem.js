@@ -33,6 +33,8 @@ export const MenuLink = styled(Link)`
   border-bottom: 0;
   padding: 0 0.75rem;
   font-weight: 600;
+  text-decoration: none;
+  color: #7a7d86;
 
   &:hover {
     color: #a3a9e7;
