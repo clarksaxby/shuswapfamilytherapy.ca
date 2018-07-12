@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import Link from 'gatsby-link'
 
 export const LinkListItem = styled.li`
   position: relative;
@@ -25,7 +26,7 @@ export const LinkListItem = styled.li`
     `};
 `
 
-export const MenuLink = styled.a`
+export const MenuLink = styled(Link)`
   display: block;
   height: inherit;
   line-height: inherit;
