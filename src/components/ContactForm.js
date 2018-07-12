@@ -1,15 +1,10 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Header from './Header'
 import Button from './Button'
 import Input from './Input'
 import Textarea from './TextArea'
 
-const ContactFormWrapper = styled.div``
-// const HeaderStyle = styled(Header)`
-//   color: white;
-// `
 const FormWrapper = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr 0.25fr 0.25fr 1fr 1fr;
@@ -52,7 +47,7 @@ const ButtonStyle = styled(Button)`
 
 const ContactForm = () => {
   return (
-    <ContactFormWrapper>
+    <div>
       <Header color="white" title="Make an Appointment">
         #3-781 Marine Park Drive, Salmon Arm, BC V1E2W7
       </Header>
@@ -64,9 +59,10 @@ const ContactForm = () => {
         <InputStyleLeft placeholder="Name" name="name" />
         <InputStyleRight placeholder="Email" name="email" />
         <TextareaStyle placeholder="Message" name="message" />
+        <input type="text" name="_gotcha" style={{ display: 'none' }} />
         <ButtonStyle color="white">Send</ButtonStyle>
       </FormWrapper>
-    </ContactFormWrapper>
+    </div>
   )
 }
 
