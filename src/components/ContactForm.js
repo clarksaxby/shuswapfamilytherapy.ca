@@ -52,7 +52,7 @@ const ThanksMessage = styled.div`
   text-align: center;
   margin-bottom: 5%;
 `
-const ContactForm = ({ mailhoundKey }) => {
+const ContactForm = ({ action }) => {
   const thanksQuery =
     Object.keys(urlQuery.parse(location.search)).length !== 0
       ? window.location.href + '&thanks=true'
@@ -68,7 +68,7 @@ const ContactForm = ({ mailhoundKey }) => {
         </ThanksMessage>
       )}
       {/*mailhound key needs to change for Kendra*/}
-      <FormWrapper method="POST" action={mailhoundKey}>
+      <FormWrapper method="POST" action={action}>
         <input
           type="hidden"
           name="_subject"
@@ -86,7 +86,7 @@ const ContactForm = ({ mailhoundKey }) => {
 }
 
 ContactForm.propTypes = {
-  mailhoundKey: PropTypes.string.isRequired,
+  action: PropTypes.string.isRequired,
 }
 
 export default ContactForm
