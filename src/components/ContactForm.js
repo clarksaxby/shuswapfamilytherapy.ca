@@ -62,7 +62,7 @@ const ContactForm = ({ action }) => {
       <Header color="white" title="Make an Appointment">
         #3-781 Marine Park Drive, Salmon Arm, BC V1E2W7
       </Header>
-      {window.location.href.includes('thanks=true') && (
+      {window.location.search.includes('thanks=true') && (
         <ThanksMessage>
           Thank you for your inquiry, your message has been sent.
         </ThanksMessage>
