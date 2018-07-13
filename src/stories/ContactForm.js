@@ -6,4 +6,11 @@ import ContactForm from '../components/ContactForm'
 
 storiesOf('Contact Form', module)
   .addDecorator(host({ background: '#90B6DF' }))
-  .add('Default empty form', () => <ContactForm />)
+  .add('Default empty form', () => (
+    <ContactForm
+      mailhoundKey={
+        'https://mailhound.twostoryrobot.com?key=' +
+        process.env.STORYBOOK_MAILHOUND_KEY
+      }
+    />
+  ))
