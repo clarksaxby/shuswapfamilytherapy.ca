@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Header from './Header'
 import Button from './Button'
@@ -45,25 +46,47 @@ const ButtonStyle = styled(Button)`
   padding: 0px;
 `
 
-const ContactForm = () => {
+const ThanksMessage = styled.div`
+  color: white;
+  text-align: center;
+  margin-bottom: 5%;
+`
+
+const ContactForm = ({ mailhoundKey }) => {
   return (
     <div>
       <Header color="white" title="Make an Appointment">
         #3-781 Marine Park Drive, Salmon Arm, BC V1E2W7
       </Header>
+      {window.location.href.includes('thanks=true') && (
+        <ThanksMessage>
+          Thank you for your inquiry, your message has been sent.
+        </ThanksMessage>
+      )}
       {/*mailhound key needs to change for Kendra*/}
-      <FormWrapper
-        method="POST"
-        action="https://mailhound.twostoryrobot.com?key=monika"
-      >
+      <FormWrapper method="POST" action={mailhoundKey}>
+        <input
+          type="hidden"
+          name="_subject"
+          value="New message to Shuswap Family Therapy"
+        />
         <InputStyleLeft placeholder="Name" name="name" />
         <InputStyleRight placeholder="Email" name="email" />
         <TextareaStyle placeholder="Message" name="message" />
         <input type="text" name="_gotcha" style={{ display: 'none' }} />
         <ButtonStyle color="white">Send</ButtonStyle>
+        <input
+          type="hidden"
+          name="_next"
+          value={`${window.location.href}&thanks=true`}
+        />
       </FormWrapper>
     </div>
   )
+}
+
+ContactForm.propTypes = {
+  mailhoundKey: PropTypes.string.isRequired,
 }
 
 export default ContactForm
