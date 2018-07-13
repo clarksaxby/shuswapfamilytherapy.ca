@@ -5,6 +5,7 @@ import Header from './Header'
 import Button from './Button'
 import Input from './Input'
 import Textarea from './TextArea'
+import urlQuery from 'query-string'
 
 const FormWrapper = styled.form`
   display: grid;
@@ -51,8 +52,11 @@ const ThanksMessage = styled.div`
   text-align: center;
   margin-bottom: 5%;
 `
-
 const ContactForm = ({ mailhoundKey }) => {
+  const thanksQuery =
+    Object.keys(urlQuery.parse(location.search)).length !== 0
+      ? window.location.href + '&thanks=true'
+      : ''
   return (
     <div>
       <Header color="white" title="Make an Appointment">
@@ -68,18 +72,14 @@ const ContactForm = ({ mailhoundKey }) => {
         <input
           type="hidden"
           name="_subject"
-          value="New message to Shuswap Family Therapy"
+          value="New message for Shuswap Family Therapy"
         />
         <InputStyleLeft placeholder="Name" name="name" />
         <InputStyleRight placeholder="Email" name="email" />
         <TextareaStyle placeholder="Message" name="message" />
         <input type="text" name="_gotcha" style={{ display: 'none' }} />
         <ButtonStyle color="white">Send</ButtonStyle>
-        <input
-          type="hidden"
-          name="_next"
-          value={`${window.location.href}&thanks=true`}
-        />
+        <input type="hidden" name="_next" value={thanksQuery} />
       </FormWrapper>
     </div>
   )
