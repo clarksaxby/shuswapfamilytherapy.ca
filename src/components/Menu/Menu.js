@@ -75,7 +75,6 @@ const LinkList = styled.ul`
 
 class Menu extends React.Component {
   state = {
-    currentItem: 0,
     collapsed: true,
   }
 
@@ -89,14 +88,6 @@ class Menu extends React.Component {
 
   constructor(props) {
     super(props)
-  }
-
-  handleMenuItemClick = (index, handler) => () => {
-    this.setState({
-      currentItem: index,
-    })
-
-    if (handler) handler()
   }
 
   toggle = () => {
@@ -113,26 +104,9 @@ class Menu extends React.Component {
         {logo && <Logo>{logo}</Logo>}
         {children && (
           <React.Fragment>
-            <LinkList>
-              {React.Children.map(children, (child, index) =>
-                React.cloneElement(child, {
-                  onClick: this.handleMenuItemClick(index, child.props.onClick),
-                  current: this.state.currentItem === index,
-                })
-              )}
-            </LinkList>
+            <LinkList>{children}</LinkList>
             <Panel visible={!this.state.collapsed} onCloseClick={this.toggle}>
-              <PanelLinkList>
-                {React.Children.map(children, (child, index) =>
-                  React.cloneElement(child, {
-                    onClick: this.handleMenuItemClick(
-                      index,
-                      child.props.onClick
-                    ),
-                    current: this.state.currentItem === index,
-                  })
-                )}
-              </PanelLinkList>
+              <PanelLinkList>{children}</PanelLinkList>
             </Panel>
             <Toggle onClick={this.toggle}>
               Menu
