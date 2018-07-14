@@ -78,7 +78,7 @@ class Menu extends React.Component {
     collapsed: true,
   }
 
-  propTypes = {
+  static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node,
