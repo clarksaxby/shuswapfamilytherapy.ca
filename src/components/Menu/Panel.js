@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import styled, { css } from 'styled-components'
 
-import { LinkListItem } from './MenuItem'
+import { MenuLink, MenuLinkContent } from './MenuItem'
 
 const PanelContainer = styled.div`
   transform: translateX(100%);
@@ -44,33 +44,33 @@ export const PanelLinkList = styled.ul`
     padding: 2.5em 1.75em;
   }
 
-  & ${LinkListItem} {
+  & ${MenuLink} {
     transition: color 0.2s;
     display: block;
     border-top: solid 1px #dde1eb;
     color: inherit !important;
-    padding: 0.75em 0;
+    padding: 0.75em 0 !important;
     text-decoration: none;
     border-bottom: 0;
     margin: 0;
-  }
-
-  & ${LinkListItem} a {
-    padding: 0;
-    margin: 0;
-    height: 24px;
+    height: 46px;
     line-height: 24px;
   }
 
-  & ${LinkListItem}:first-child {
+  & ${MenuLink} ${MenuLinkContent} {
+    padding: 0;
+    margin: 0;
+  }
+
+  & ${MenuLink}:first-child {
     border-top: 0;
   }
 
-  & ${LinkListItem}:hover, & ${LinkListItem}:active, & ${LinkListItem}:focus {
+  & ${MenuLink}:hover, & ${MenuLink}:active, & ${MenuLink}:focus {
     color: #a3a9e7 !important;
   }
 
-  & ${LinkListItem}:after {
+  & ${MenuLink}:after {
     display: none;
   }
 `
