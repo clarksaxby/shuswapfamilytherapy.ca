@@ -94,7 +94,6 @@ const PanelCloseIcon = styled.span`
   cursor: pointer;
   padding-right: 1.25em;
   text-align: right;
-  vertical-align: middle;
 
   &:hover {
     color: #a3a9e7;
