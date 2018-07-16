@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header'
 
-const ResourcesWrapper = styled.div``
-
-const TeaserWrapper = styled.div`
+const HabitWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1.75fr 1fr;
   grid-gap: 40px;
@@ -31,7 +29,7 @@ const Title = styled.h3`
 `
 
 const Resources = () => (
-  <ResourcesWrapper>
+  <div>
     <Header title="Winter Blues">
       January can be one of the most difficult months of the year from a mental
       health perspective. After the excitement (or stress!) of the holidays,
@@ -42,7 +40,7 @@ const Resources = () => (
       resilience. <br />
       <strong>Kendra Kieft, MAMFT, RCC</strong>
     </Header>
-    <TeaserWrapper>
+    <HabitWrapper>
       <Habit1>
         <Title>Habit 1: Sleep</Title>
         Most teens/adults need between 7-9 hours of sleep each night. Remember
@@ -83,8 +81,8 @@ const Resources = () => (
         time with, and share a laugh or cry together will make your life much
         richer.
       </Habit5>
-    </TeaserWrapper>
-  </ResourcesWrapper>
+    </HabitWrapper>
+  </div>
 )
 
 export default Resources
