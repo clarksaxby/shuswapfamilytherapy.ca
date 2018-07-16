@@ -6,7 +6,7 @@ const ResourcesWrapper = styled.div``
 
 const TeaserWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 1.75fr 1fr;
   grid-gap: 40px;
   text-align: center;
 `
