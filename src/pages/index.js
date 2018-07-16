@@ -1,14 +1,30 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import styled from 'styled-components'
+
+import HeroBanner from '../components/HeroBanner'
+
+import heroImage from './images/lake.jpg'
+
+const Content = styled.div`
+  max-width: calc(100% - 5rem);
+  padding: 2.5rem 0;
+  margin: 0 auto;
+`
+
+const Section = styled.section`
+  margin-top: 2.5rem;
+`
 
 const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <p>I did I built a contact form :D</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
+  <Content>
+    <Section>
+      <HeroBanner
+        title="Discover"
+        image={heroImage}
+        subtitle="meaningful connections, creative solutions, and new possibilities"
+      />
+    </Section>
+  </Content>
 )
 
 export default IndexPage
