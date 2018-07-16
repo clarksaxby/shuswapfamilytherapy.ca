@@ -7,13 +7,7 @@ import './index.css'
 
 const Layout = ({ children, data }) => (
   <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
+    <Helmet title={data.site.siteMetadata.title} />
     <Menu>
       <MenuItem to="/about">About</MenuItem>
       <MenuItem to="/services">Services</MenuItem>
