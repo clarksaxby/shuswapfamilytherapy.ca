@@ -44,7 +44,7 @@ const Section = styled.section`
 const Services = styled.div`
   display: flex;
   padding-bottom: 1em;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 `
 
@@ -52,7 +52,6 @@ const Service = styled.div`
   flex: 1;
   flex-grow: 1;
   flex-basis: auto;
-  margin: 0 1.5em;
   width: 300px;
   min-width: 300px;
   max-width: 300px;
