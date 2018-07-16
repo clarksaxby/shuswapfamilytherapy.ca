@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Shuswap Family Therapy',
   },
   plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-eslint'],
 }
