@@ -5,7 +5,7 @@ import Header from './Header'
 import Button from './Button'
 import Input from './Input'
 import Textarea from './TextArea'
-import urlQuery from 'query-string'
+import queryString from 'query-string'
 
 const FormWrapper = styled.form`
   display: grid;
@@ -53,10 +53,11 @@ const ThanksMessage = styled.div`
   margin-bottom: 5%;
 `
 const ContactForm = ({ action }) => {
-  const thanksQuery =
-    Object.keys(urlQuery.parse(location.search)).length !== 0
-      ? window.location.href + '&thanks=true'
-      : ''
+  const redirect = queryString.parseUrl(location.href)
+  //  Regardless of whether there is already search params in the url, this will ass thanks=true
+  redirect.query.thanks = true
+  //  This reconstructs the whole url to use for the redirect field
+  const redirectUrl = `${redirect.url}?${queryString.stringify(redirect.query)}`
   return (
     <div>
       <Header color="white" title="Make an Appointment">
@@ -79,7 +80,7 @@ const ContactForm = ({ action }) => {
         <TextareaStyle placeholder="Message" name="message" />
         <input type="text" name="_gotcha" style={{ display: 'none' }} />
         <ButtonStyle color="white">Send</ButtonStyle>
-        <input type="hidden" name="_next" value={thanksQuery} />
+        <input type="hidden" name="_next" value={redirectUrl} />
       </FormWrapper>
     </div>
   )

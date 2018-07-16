@@ -8,7 +8,7 @@ storiesOf('Contact Form', module)
   .addDecorator(host({ background: '#90B6DF' }))
   .add('Default empty form', () => (
     <ContactForm
-      mailhoundKey={
+      action={
         'https://mailhound.twostoryrobot.com?key=' +
         process.env.STORYBOOK_MAILHOUND_KEY
       }
