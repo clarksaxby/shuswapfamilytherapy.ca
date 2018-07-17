@@ -57,6 +57,41 @@ const Service = styled.div`
   max-width: 300px;
 `
 
+const QuoteContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`
+
+const Quote = styled.div`
+  flex: 1;
+  flex-basis: auto;
+  padding: 1em 2em;
+  font-size: 1.25em;
+  text-align: center;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+
+  quotes: '“' '”';
+
+  /* Quote styling from https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ */
+  &:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+`
+
+const Author = styled.div`
+  color: #7a7d86;
+  font-weight: 600;
+  padding-top: 0.5em;
+`
+
 const IndexPage = () => (
   <Content>
     <Section>
@@ -93,6 +128,26 @@ const IndexPage = () => (
             />
           </Service>
         </Services>
+      </ContentPage>
+    </Section>
+    <Section>
+      <ContentPage>
+        <Header title="Quotes" />
+        <QuoteContainer>
+          <Quote>
+            Nothing grows people like love. When we love people, they blossom
+            <Author>Sue Johnson</Author>
+          </Quote>
+          <Quote>
+            Follow your heart, but take your brain with you.
+            <Author>Alfred Adler</Author>
+          </Quote>
+          <Quote>
+            How can I provide a relationship which this person can use for
+            his/her own personal growth?
+            <Author>Carl Rogers</Author>
+          </Quote>
+        </QuoteContainer>
       </ContentPage>
     </Section>
   </Content>
