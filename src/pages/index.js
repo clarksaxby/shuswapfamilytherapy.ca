@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import HeroBanner from '../components/HeroBanner'
 import ContentPage from '../components/ContentPage'
-import Header from '../components/Header'
 import Teaser from '../components/Teaser'
 
 import heroImage from './images/lake.jpg'
@@ -102,8 +101,7 @@ const IndexPage = () => (
       />
     </Section>
     <Section>
-      <ContentPage>
-        <Header title="Services" />
+      <ContentPage title="Services">
         <Services>
           <Service>
             <Teaser
@@ -131,8 +129,7 @@ const IndexPage = () => (
       </ContentPage>
     </Section>
     <Section>
-      <ContentPage>
-        <Header title="Quotes" />
+      <ContentPage title="Quotes">
         <QuoteContainer>
           <Quote>
             Nothing grows people like love. When we love people, they blossom
