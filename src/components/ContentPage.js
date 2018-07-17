@@ -63,8 +63,8 @@ const ContentPage = ({ title, subtitle, footer, children }) => (
 )
 
 ContentPage.propTypes = {
-  title: PropTypes.text,
-  subtitle: PropTypes.text,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
   footer: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
