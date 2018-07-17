@@ -18,6 +18,11 @@ const IconsStyle = styled.div`
   border-color: rgba(255, 255, 255, 0.35);
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &:hover {
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     background-color: rgba(255, 255, 255, 0.35);
@@ -26,7 +31,7 @@ const IconsStyle = styled.div`
 `
 const Icon = styled(FontAwesomeIcon)`
   color: white;
-  font-size: 2em;
+  font-size: 1.3rem;
 `
 
 const Icons = props => {
