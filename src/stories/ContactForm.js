@@ -14,3 +14,12 @@ storiesOf('Contact Form', module)
       }
     />
   ))
+  .add('empty form showing thankyou message', () => (
+    <ContactForm
+      action={
+        'https://mailhound.twostoryrobot.com?key=' +
+        process.env.STORYBOOK_MAILHOUND_KEY
+      }
+      showThanks={true}
+    />
+  ))

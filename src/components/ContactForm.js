@@ -52,7 +52,7 @@ const ThanksMessage = styled.div`
   text-align: center;
   margin-bottom: 5%;
 `
-const ContactForm = ({ action }) => {
+const ContactForm = ({ action, showThanks }) => {
   const redirect = queryString.parseUrl(location.href)
   //  Regardless of whether there is already search params in the url, this will ass thanks=true
   redirect.query.thanks = true
@@ -68,7 +68,11 @@ const ContactForm = ({ action }) => {
           Thank you for your inquiry, your message has been sent.
         </ThanksMessage>
       )}
-      {/*mailhound key needs to change for Kendra*/}
+      {showThanks && (
+        <ThanksMessage>
+          Thank you for your inquiry, your message has been sent.
+        </ThanksMessage>
+      )}
       <FormWrapper method="POST" action={action}>
         <input
           type="hidden"
@@ -88,6 +92,7 @@ const ContactForm = ({ action }) => {
 
 ContactForm.propTypes = {
   action: PropTypes.string.isRequired,
+  showThanks: PropTypes.bool,
 }
 
 export default ContactForm
