@@ -5,7 +5,6 @@ import Header from './Header'
 import Button from './Button'
 import Input from './Input'
 import Textarea from './TextArea'
-import queryString from 'query-string'
 
 const FormWrapper = styled.form`
   display: grid;
@@ -52,22 +51,12 @@ const ThanksMessage = styled.div`
   text-align: center;
   margin-bottom: 5%;
 `
-const ContactForm = ({ action, showThanks }) => {
-  const redirect = queryString.parseUrl(location.href)
-  //  Regardless of whether there is already search params in the url, this will ass thanks=true
-  redirect.query.thanks = true
-  //  This reconstructs the whole url to use for the redirect field
-  const redirectUrl = `${redirect.url}?${queryString.stringify(redirect.query)}`
+const ContactForm = ({ action, showThanks, redirectUrl }) => {
   return (
     <div>
       <Header color="white" title="Make an Appointment">
         #3-781 Marine Park Drive, Salmon Arm, BC V1E2W7
       </Header>
-      {window.location.search.includes('thanks=true') && (
-        <ThanksMessage>
-          Thank you for your inquiry, your message has been sent.
-        </ThanksMessage>
-      )}
       {showThanks && (
         <ThanksMessage>
           Thank you for your inquiry, your message has been sent.
@@ -93,6 +82,7 @@ const ContactForm = ({ action, showThanks }) => {
 ContactForm.propTypes = {
   action: PropTypes.string.isRequired,
   showThanks: PropTypes.bool,
+  redirectUrl: PropTypes.string,
 }
 
 export default ContactForm
