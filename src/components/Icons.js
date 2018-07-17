@@ -10,6 +10,8 @@ const IconsWrapper = styled.div`
   grid-column-gap: 17px;
 `
 const IconsStyle = styled.div`
+  width: 3.5rem;
+  height: 3.5rem;
   border: 1px solid;
   border-radius: 50%;
   padding: 18px;
