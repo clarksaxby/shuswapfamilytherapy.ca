@@ -6,7 +6,8 @@ import Kendra from '../layouts/images/kendra.png'
 const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 5fr repeat(5, 1fr);
+  grid-template-rows: 5fr repeat(5, 0.5fr);
+  grid-gap: 20px;
 `
 const Image = styled.img``
 
