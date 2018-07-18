@@ -2,45 +2,101 @@ import React from 'react'
 import styled from 'styled-components'
 import Kendra from '../layouts/images/kendra.png'
 import ContentPage from '../components/ContentPage'
+import overlay from '../layouts/images/overlay.png'
 
 const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.35fr repeat(4, 0.7fr);
-  grid-gap: 10px;
+  grid-template-rows: 0.2fr repeat(4, 0.7fr);
+  grid-gap: 10px 20px;
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 0.3fr repeat(4, 0.5fr);
+    grid-gap: 10px 0px;
+  }
+  @media (max-width: 450px) {
+    grid-template-rows: 1fr 0.3fr repeat(4, 0.5fr);
+    grid-gap: 10px 0px;
+  }
+`
+const ImageStyleAfter = styled.div`
+  position: relative;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 3;
+  justify-self: center;
+  align-self: center;
+
+  @media (max-width: 1000px) {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 7px);
+    background-image: url(${overlay}),
+      linear-gradient(
+        45deg,
+        rgba(162, 206, 220, 0.25),
+        rgba(170, 143, 255, 0.25)
+      );
+  }
 `
 const Image = styled.img`
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 3;
+  @media (max-width: 630px) {
+    width: 310px;
+    height: 330px;
+  }
 `
 const Paragraph1 = styled.div`
-  grid-column: 1 / span 1;
+  grid-column: 1 / span 2;
   grid-row: 1 / span 1;
+  @media (max-width: 1000px) {
+    grid-row: 2 / span 1;
+  }
 `
 
 const Paragraph2 = styled.div`
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
+  @media (max-width: 1000px) {
+    grid-row: 3 / span 1;
+  }
 `
 const Paragraph3 = styled.div`
   grid-column: 1 / span 1;
   grid-row: 3 / span 1;
+  @media (max-width: 1000px) {
+    grid-row: 4 / span 1;
+  }
 `
 const Paragraph4 = styled.div`
   grid-column: 1 / span 1;
   grid-row: 4 / span 1;
+  @media (max-width: 1000px) {
+    grid-row: 5 / span 1;
+  }
 `
 const Paragraph5 = styled.div`
   grid-column: 1 / span 2;
   grid-row: 5 / span 1;
+  @media (max-width: 1000px) {
+    grid-row: 6 / span 1;
+  }
 `
-// align-self: center;
 
 const About = () => (
   <div>
     <ContentPage title="Kendra Kieft" subtitle="MAMFT, RCC">
       <ContentWrapper>
-        <Image src={Kendra} alt="Kendra" />
+        <ImageStyleAfter>
+          <Image src={Kendra} alt="Kendra" />
+        </ImageStyleAfter>
+
         <Paragraph1>
           My name is Kendra Kieft and I am a Registered Clinical Counsellor
           (#13285) with a Masters degree in Marriage and Family Therapy. I
