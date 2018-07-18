@@ -154,7 +154,7 @@ const IndexPage = () => (
         title="Make an Appointment"
         subtitle="#3-781 Marine Park Drive, Salmon Arm, BC V1E2W7"
         colored
-        footer
+        footer="Shuswap Couple &amp; Family Therapy &copy; 2018"
       >
         <ContactForm />
       </ContentPage>
