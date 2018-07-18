@@ -9,10 +9,15 @@ const Layout = ({ children, data }) => (
   <div>
     <Helmet title={data.site.siteMetadata.title} />
     <Menu>
-      <MenuItem to="/about">About</MenuItem>
-      <MenuItem to="/services">Services</MenuItem>
-      <MenuItem to="/contact">Contact</MenuItem>
-      <MenuItem to="/resources">Resources</MenuItem>
+      <MenuItem exact to="/">
+        Home
+      </MenuItem>
+      <MenuItem exact to="/about">
+        About
+      </MenuItem>
+      <MenuItem exact to="/resources">
+        Resources
+      </MenuItem>
     </Menu>
     {children()}
   </div>
