@@ -91,7 +91,11 @@ const Paragraph5 = styled.div`
 
 const About = () => (
   <div>
-    <ContentPage title="Kendra Kieft" subtitle="MAMFT, RCC">
+    <ContentPage
+      title="Kendra Kieft"
+      subtitle="MAMFT, RCC"
+      footer="Shuswap Couple & Family Therapy 2016"
+    >
       <ContentWrapper>
         <ImageStyleAfter>
           <Image src={Kendra} alt="Kendra" />
