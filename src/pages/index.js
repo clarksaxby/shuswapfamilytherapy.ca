@@ -9,6 +9,7 @@ import heroImage from './images/lake.jpg'
 import couplesImage from './images/couples-pricing.jpg'
 import familiesImage from './images/families-pricing.jpg'
 import individualImage from './images/individual-pricing.jpg'
+import ContactForm from '../components/ContactForm'
 
 const Content = styled.div`
   max-width: calc(100% - 7rem);
@@ -145,6 +146,17 @@ const IndexPage = () => (
             <Author>Carl Rogers</Author>
           </Quote>
         </QuoteContainer>
+      </ContentPage>
+    </Section>
+
+    <Section>
+      <ContentPage
+        title="Make an Appointment"
+        subtitle="#3-781 Marine Park Drive, Salmon Arm, BC V1E2W7"
+        colored
+        footer
+      >
+        <ContactForm />
       </ContentPage>
     </Section>
   </Content>
