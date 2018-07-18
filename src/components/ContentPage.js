@@ -91,7 +91,7 @@ ContentPage.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   footer: PropTypes.string,
-  colored: PropTypes.string,
+  colored: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
