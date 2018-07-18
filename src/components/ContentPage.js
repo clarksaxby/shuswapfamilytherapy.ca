@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Header from './Header'
+import Footer from './Footer'
+import Icons from './Icons'
 
 const ContentPageContainer = styled.section`
   background-color: #ffffff;
@@ -26,6 +28,7 @@ const Content = styled.div`
   padding: 6rem 6rem 4rem 6rem;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
 
   @media screen and (max-width: 1280px) {
     padding: 3rem 3rem 1rem 3rem;
@@ -46,16 +49,23 @@ const Content = styled.div`
     `};
 `
 
-const ContentPage = ({ title, subtitle, children }) => (
+const ContentPage = ({ title, subtitle, footer, children }) => (
   <ContentPageContainer title={title}>
     {title && <ContentHeader title={title}>{subtitle}</ContentHeader>}
     <Content title={title}>{children}</Content>
+    {footer && (
+      <Footer>
+        <Icons />
+        {footer}
+      </Footer>
+    )}
   </ContentPageContainer>
 )
 
 ContentPage.propTypes = {
   title: PropTypes.text,
   subtitle: PropTypes.text,
+  footer: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

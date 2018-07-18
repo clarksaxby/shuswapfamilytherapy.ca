@@ -6,6 +6,7 @@ const HeaderContainer = styled.header`
   padding: 7rem 6rem 5rem 6rem;
   text-align: center;
   margin: 0 auto;
+  color: ${props => (props.color ? props.color : 'rgb(122, 125, 134)')};
   font-family: 'Source Sans Pro', Helvetica, sans-serif;
 
   @media screen and (max-width: 1280px) {
@@ -53,7 +54,7 @@ const HeaderText = styled.p`
 `
 
 const Header = props => (
-  <HeaderContainer>
+  <HeaderContainer {...props}>
     <HeaderTitle>{props.title}</HeaderTitle>
     <HeaderText>{props.children}</HeaderText>
   </HeaderContainer>
