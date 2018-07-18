@@ -10,8 +10,6 @@ const FormWrapper = styled.form`
   grid-template-columns: 1fr 1fr 0.25fr 0.25fr 1fr 1fr;
   grid-template-rows: 0.5fr 1fr 4fr 1fr 0.5fr;
   grid-gap: 20px 20px;
-  border-top: 1px solid #dde1eb;
-  border-bottom: 1px solid #dde1eb;
 `
 const InputStyleLeft = styled(Input)`
   color: white;
