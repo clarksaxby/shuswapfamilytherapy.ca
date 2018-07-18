@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Header from './Header'
 import Button from './Button'
 import Input from './Input'
 import Textarea from './TextArea'
@@ -54,9 +53,6 @@ const ThanksMessage = styled.div`
 const ContactForm = ({ action, showThanks, redirectUrl }) => {
   return (
     <div>
-      <Header color="white" title="Make an Appointment">
-        #3-781 Marine Park Drive, Salmon Arm, BC V1E2W7
-      </Header>
       {showThanks && (
         <ThanksMessage>
           Thank you for your inquiry, your message has been sent.
