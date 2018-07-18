@@ -62,9 +62,9 @@ const ContactForm = ({ action, showThanks, redirectUrl }) => {
           name="_subject"
           value="New message for Shuswap Family Therapy"
         />
-        <InputStyleLeft placeholder="Name" name="name" />
-        <InputStyleRight placeholder="Email" name="email" />
-        <TextareaStyle placeholder="Message" name="message" />
+        <InputStyleLeft placeholder="Name" name="name" color="white" />
+        <InputStyleRight placeholder="Email" name="email" color="white" />
+        <TextareaStyle placeholder="Message" name="message" color="white" />
         <input type="text" name="_gotcha" style={{ display: 'none' }} />
         <ButtonStyle color="white">Send</ButtonStyle>
         <input type="hidden" name="_next" value={redirectUrl} />
