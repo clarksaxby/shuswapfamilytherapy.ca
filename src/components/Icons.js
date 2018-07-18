@@ -10,12 +10,19 @@ const IconsWrapper = styled.div`
   grid-column-gap: 17px;
 `
 const IconsStyle = styled.div`
+  width: 3.5rem;
+  height: 3.5rem;
   border: 1px solid;
   border-radius: 50%;
   padding: 18px;
   border-color: rgba(255, 255, 255, 0.35);
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &:hover {
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     background-color: rgba(255, 255, 255, 0.35);
@@ -24,7 +31,7 @@ const IconsStyle = styled.div`
 `
 const Icon = styled(FontAwesomeIcon)`
   color: white;
-  font-size: 2em;
+  font-size: 1.3rem;
 `
 
 const Icons = props => {
