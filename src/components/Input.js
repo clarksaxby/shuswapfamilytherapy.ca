@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Input = styled.input`
   appearance: none;
@@ -21,6 +21,18 @@ const Input = styled.input`
     border-color: #a3a9e7;
     box-shadow: 0 0 0 1px #a3a9e7;
   }
+
+  ${props =>
+    props.color === 'white' &&
+    css`
+     border-color: rgba(255, 255, 255, 0.35)
+     color: #ffffff;
+
+     &:focus {
+      border-color: #ffffff
+      box-shadow: 0 0 0 1px #ffffff;
+     }
+  `};
 `
 
 export default Input

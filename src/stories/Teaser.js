@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { host } from 'storybook-host'
 import Teaser from '../components/Teaser'
+import couplesImage from '../pages/images/couples-pricing.jpg'
 const img =
   'https://images.unsplash.com/photo-1518658761661-a3c568ee7b64?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac56147bf14511bf5abaf6dc5366258a&auto=format&fit=crop&w=375&q=80'
 
@@ -13,4 +14,7 @@ storiesOf('Teaser', module)
   .add('Default with no props', () => <Teaser />)
   .add('with all props', () => (
     <Teaser img={img} btnTitle="Details" imgText={text} />
+  ))
+  .add('with large image', () => (
+    <Teaser img={couplesImage} btnTitle="Couples" imgText={text} />
   ))

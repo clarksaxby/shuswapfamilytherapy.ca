@@ -7,15 +7,19 @@ import overlay from '../layouts/images/overlay.png'
 const TeaserWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr;
-  grid-template-rows: 3fr 0.75fr 0.5fr;
+  grid-template-rows: 300px 0.75fr 0.5fr;
 `
 const ImageZoomWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   grid-column: 1 / -1;
   justify-self: center;
   position: relative;
   overflow: hidden;
 `
 const ImageStyleAfter = styled.div`
+  width: 100%;
+  height: 100%;
   transition: transform 0.2s ease;
   &:hover ${ImageStyle} {
     transform: scale(1.075);
@@ -36,11 +40,16 @@ const ImageStyleAfter = styled.div`
       );
   }
 `
-const ImageStyle = styled.img`
+const ImageStyle = styled.div`
   display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url('${props => props.img}');
+  background-size: cover;
+  background-position: ${props => props.origin};
 `
 
-const TextMessage = styled.div`
+const TextMessage = styled.p`
   grid-column: 1 / span 3;
   align-self: center;
   font-family: 'Source Sans Pro', Helvetica, sans-serif;
@@ -60,7 +69,11 @@ const Teaser = props => {
     <TeaserWrapper>
       <ImageZoomWrapper>
         <ImageStyleAfter>
-          <ImageStyle src={props.img} alt="Shuswap Family Therapy" />
+          <ImageStyle
+            img={props.img}
+            origin={props.imgPosition}
+            alt="Shuswap Family Therapy"
+          />
         </ImageStyleAfter>
       </ImageZoomWrapper>
 
@@ -73,6 +86,7 @@ const Teaser = props => {
 Teaser.propTypes = {
   img: PropTypes.string,
   imgText: PropTypes.string,
+  imgPosition: PropTypes.string,
   btnTitle: PropTypes.string,
 }
 

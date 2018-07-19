@@ -4,10 +4,17 @@ import styled, { css } from 'styled-components'
 import Header from './Header'
 import Footer from './Footer'
 import Icons from './Icons'
+import overlayImage from '../layouts/images/overlay.png'
 
 const ContentPageContainer = styled.section`
   background-color: #ffffff;
   box-shadow: rgba(161, 177, 204, 0.325) 0px 14.6667px 58.6667px 1.83333px;
+
+  ${({ colored }) =>
+    colored &&
+    css`
+    background-image: url('${overlayImage}'), linear-gradient(45deg, #84c8da, #88a8ec);
+  `};
 `
 
 const ContentHeader = styled(Header)`
@@ -22,6 +29,15 @@ const ContentHeader = styled(Header)`
   @media screen and (max-width: 480px) {
     padding: 3rem 1.5rem 1rem 1.5rem;
   }
+
+  ${({ colored }) =>
+    colored &&
+    css`
+      color: #ffffff;
+      & h1 {
+        font-size: 2.5rem;
+      }
+    `};
 `
 
 const Content = styled.div`
@@ -49,23 +65,33 @@ const Content = styled.div`
     `};
 `
 
-const ContentPage = ({ title, subtitle, footer, children }) => (
-  <ContentPageContainer title={title}>
-    {title && <ContentHeader title={title}>{subtitle}</ContentHeader>}
+const ContentFooter = styled(Footer)`
+  background: transparent;
+  border-top: 1px solid #dde1eb;
+`
+
+const ContentPage = ({ title, subtitle, footer, colored, children }) => (
+  <ContentPageContainer title={title} colored={colored}>
+    {title && (
+      <ContentHeader title={title} colored={colored}>
+        {subtitle}
+      </ContentHeader>
+    )}
     <Content title={title}>{children}</Content>
     {footer && (
-      <Footer>
+      <ContentFooter>
         <Icons />
         {footer}
-      </Footer>
+      </ContentFooter>
     )}
   </ContentPageContainer>
 )
 
 ContentPage.propTypes = {
-  title: PropTypes.text,
-  subtitle: PropTypes.text,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
   footer: PropTypes.string,
+  colored: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

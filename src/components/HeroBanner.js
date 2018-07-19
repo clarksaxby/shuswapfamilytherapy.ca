@@ -98,7 +98,11 @@ const HeroImage = styled.img`
   height: 100%;
 `
 
-const HeroBanner = ({ image, title, action, onAction }) => (
+const Subtitle = styled.p`
+  font-size: 1.4em;
+`
+
+const HeroBanner = ({ image, title, subtitle, action, onAction }) => (
   <HeroContainer image={image}>
     {image && (
       <HeroImageContainer>
@@ -106,6 +110,7 @@ const HeroBanner = ({ image, title, action, onAction }) => (
       </HeroImageContainer>
     )}
     <HeroTitle>{title}</HeroTitle>
+    {subtitle && <Subtitle>{subtitle}</Subtitle>}
     {action && (
       <Button color="white" next onClick={onAction}>
         {action}
@@ -117,6 +122,7 @@ const HeroBanner = ({ image, title, action, onAction }) => (
 HeroBanner.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   action: PropTypes.string,
   onAction: PropTypes.func,
 }
