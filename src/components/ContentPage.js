@@ -66,8 +66,12 @@ const Content = styled.div`
 `
 
 const ContentFooter = styled(Footer)`
-  background: transparent;
-  border-top: 1px solid #dde1eb;
+  ${({ colored }) =>
+    colored &&
+    css`
+      background: transparent;
+      border-top: 1px solid #dde1eb;
+    `};
 `
 
 const ContentPage = ({ title, subtitle, footer, colored, children }) => (
@@ -79,7 +83,7 @@ const ContentPage = ({ title, subtitle, footer, colored, children }) => (
     )}
     <Content title={title}>{children}</Content>
     {footer && (
-      <ContentFooter>
+      <ContentFooter colored={colored}>
         <Icons />
         {footer}
       </ContentFooter>
