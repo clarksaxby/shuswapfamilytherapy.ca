@@ -94,7 +94,7 @@ const About = () => (
     <ContentPage
       title="Kendra Kieft"
       subtitle="MAMFT, RCC"
-      footer="Shuswap Couple & Family Therapy 2016"
+      footer="Shuswap Couple & Family Therapy 2018"
     >
       <ContentWrapper>
         <ImageStyleAfter>
