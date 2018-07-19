@@ -38,7 +38,7 @@ const Resources = () => (
     <ContentPage
       title="Winter Blues"
       subtitle="Kendra Kieft, MAMFT, RCC"
-      footer="Copyright 2018"
+      footer="Shuswap Couple & Family Therapy 2018"
     >
       <HabitWrapper>
         <Intro>
