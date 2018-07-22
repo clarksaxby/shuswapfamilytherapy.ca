@@ -32,16 +32,3 @@ storiesOf('Menu', module)
       </MenuItem>
     </Menu>
   ))
-  .add('With logo', () => (
-    <Menu logo="Lorem Ipsum Co.">
-      <MenuItem onClick={menuAction('Home')} to="/home">
-        Home
-      </MenuItem>
-      <MenuItem onClick={menuAction('About')} to="/about">
-        About
-      </MenuItem>
-      <MenuItem onClick={menuAction('Contact')} to="/contact">
-        Contact
-      </MenuItem>
-    </Menu>
-  ))
