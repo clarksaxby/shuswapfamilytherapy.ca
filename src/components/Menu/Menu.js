@@ -6,6 +6,8 @@ import styled from 'styled-components'
 
 import Panel, { PanelLinkList } from './Panel'
 
+import logo from '../../layouts/images/logo.png'
+
 const MenuContainer = styled.nav`
   position: fixed;
   top: 0;
@@ -19,8 +21,8 @@ const MenuContainer = styled.nav`
   z-index: 10000;
 
   @media screen and (max-width: 736px) {
-    height: 44px;
-    line-height: 44px;
+    height: 60px;
+    line-height: 60px;
   }
 `
 
@@ -49,14 +51,17 @@ const ToggleIcon = styled(FontAwesomeIcon)`
   margin: 0 0 0 0.625rem;
 `
 
-const Logo = styled.div`
+const Logo = styled.img`
   position: absolute;
   top: 0;
   left: 2rem;
-  text-transform: uppercase;
+  height: 100%;
+
+  background-size: cover;
 
   @media screen and (max-width: 736px) {
     left: 1rem;
+    width: 80px;
   }
 `
 
@@ -83,7 +88,6 @@ class Menu extends React.Component {
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node,
     ]),
-    logo: PropTypes.string,
   }
 
   constructor(props) {
@@ -97,11 +101,11 @@ class Menu extends React.Component {
   }
 
   render() {
-    const { children, logo } = this.props
+    const { children } = this.props
 
     return (
       <MenuContainer>
-        {logo && <Logo>{logo}</Logo>}
+        <Logo src={logo} />
         {children && (
           <React.Fragment>
             <LinkList>{children}</LinkList>
