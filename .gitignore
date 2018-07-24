@@ -64,3 +64,5 @@ typings/
 # Gatsby directories
 .cache
 public/
+
+.DS_Store
