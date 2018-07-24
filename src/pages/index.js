@@ -66,7 +66,11 @@ const Author = styled.div`
 
 const IndexPage = () => {
   let redirect
-  if (typeof window !== 'undefined' && window.location && window.location.href) {
+  if (
+    typeof window !== 'undefined' &&
+    window.location &&
+    window.location.href
+  ) {
     redirect = queryString.parseUrl(window.location.href)
     redirect.query.thanks = true
   }
@@ -140,8 +144,12 @@ const IndexPage = () => {
               'https://mailhound.twostoryrobot.com?key=' +
               process.env.STORYBOOK_MAILHOUND_KEY
             }
-            showThanks={typeof window !== 'undefined' && window.location.search.includes('thanks=true')}
-            redirectUrl={`${typeof window !== 'undefined' && redirect.url}?${queryString.stringify(
+            showThanks={
+              typeof window !== 'undefined' &&
+              window.location.search.includes('thanks=true')
+            }
+            redirectUrl={`${typeof window !== 'undefined' &&
+              redirect.url}?${queryString.stringify(
               typeof window !== 'undefined' && redirect.query
             )}`}
           />
