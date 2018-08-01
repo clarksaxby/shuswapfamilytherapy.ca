@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 import Panel, { PanelLinkList } from './Panel'
-
-import logo from '../../layouts/images/logo.png'
 
 const MenuContainer = styled.nav`
   position: fixed;
@@ -51,7 +50,7 @@ const ToggleIcon = styled(FontAwesomeIcon)`
   margin: 0 0 0 0.625rem;
 `
 
-const Logo = styled.img`
+const Logo = styled(Img)`
   position: absolute;
   top: 0;
   left: 2rem;
@@ -88,6 +87,7 @@ class Menu extends React.Component {
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node,
     ]),
+    logo: PropTypes.object,
   }
 
   constructor(props) {
@@ -101,11 +101,11 @@ class Menu extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, logo } = this.props
 
     return (
       <MenuContainer>
-        <Logo src={logo} />
+        <Logo resolutions={logo} />
         {children && (
           <React.Fragment>
             <LinkList>{children}</LinkList>

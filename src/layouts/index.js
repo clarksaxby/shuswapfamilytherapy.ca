@@ -8,7 +8,7 @@ import './index.css'
 const Layout = ({ children, data }) => (
   <div>
     <Helmet title={data.site.siteMetadata.title} />
-    <Menu>
+    <Menu logo={data.logoImage.childImageSharp.resolutions}>
       <MenuItem exact to="/">
         Home
       </MenuItem>
@@ -35,6 +35,14 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    logoImage: file(relativePath: { eq: "layouts/images/logo.png" }) {
+      childImageSharp {
+        resolutions(width: 80, height: 60) {
+          ...GatsbyImageSharpResolutions_noBase64
+        }
       }
     }
   }
