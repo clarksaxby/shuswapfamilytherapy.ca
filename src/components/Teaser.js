@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 import Button from './Button'
 import overlay from '../layouts/images/overlay.png'
 
@@ -40,13 +41,10 @@ const ImageStyleAfter = styled.div`
       );
   }
 `
-const ImageStyle = styled.div`
+const ImageStyle = styled(Img)`
   display: block;
   height: 100%;
   width: 100%;
-  background-image: url('${props => props.img}');
-  background-size: cover;
-  background-position: ${props => props.origin};
 `
 
 const TextMessage = styled.p`
@@ -70,7 +68,7 @@ const Teaser = props => {
       <ImageZoomWrapper>
         <ImageStyleAfter>
           <ImageStyle
-            img={props.img}
+            resolutions={props.img}
             origin={props.imgPosition}
             alt="Shuswap Family Therapy"
           />
@@ -84,7 +82,7 @@ const Teaser = props => {
 }
 
 Teaser.propTypes = {
-  img: PropTypes.string,
+  img: PropTypes.object,
   imgText: PropTypes.string,
   imgPosition: PropTypes.string,
   btnTitle: PropTypes.string,
