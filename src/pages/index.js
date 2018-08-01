@@ -142,7 +142,7 @@ const IndexPage = () => {
           <ContactForm
             action={
               'https://mailhound.twostoryrobot.com?key=' +
-              process.env.STORYBOOK_MAILHOUND_KEY
+              process.env.MAILHOUND_KEY
             }
             showThanks={
               typeof window !== 'undefined' &&
