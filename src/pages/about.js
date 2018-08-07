@@ -8,15 +8,14 @@ import overlay from '../layouts/images/overlay.png'
 const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.2fr repeat(4, 0.7fr);
   grid-gap: 10px 20px;
+  margin-bottom: 40px;
+
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 0.3fr repeat(4, 0.5fr);
     grid-gap: 10px 0px;
   }
-  @media (max-width: 450px) {
-    grid-template-rows: 1fr 0.3fr repeat(4, 0.5fr);
+  @media screen and (max-width: 565px) {
     grid-gap: 10px 0px;
   }
 `
