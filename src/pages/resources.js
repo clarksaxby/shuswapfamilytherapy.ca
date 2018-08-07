@@ -6,9 +6,13 @@ import Content, { Section } from '../components/Content'
 
 const HabitWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1.75fr 1fr;
+  grid-template-columns: 0.75fr 2fr 0.75fr;
   grid-gap: 40px;
   text-align: center;
+  margin-bottom: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 0fr 1fr 0fr;
+  }
 `
 const Intro = styled.div`
   grid-column: 1 / -1;
