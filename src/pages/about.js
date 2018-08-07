@@ -22,7 +22,7 @@ const ContentWrapper = styled.div`
 const ImageStyleAfter = styled.div`
   position: relative;
   grid-column: 2 / span 1;
-  grid-row: 2 / span 3;
+  grid-row: 3 / span 3;
   justify-self: center;
   align-self: center;
 
@@ -47,10 +47,8 @@ const ImageStyleAfter = styled.div`
   }
 `
 const Image = styled.img`
-  @media (max-width: 630px) {
-    width: 310px;
-    height: 330px;
-  }
+  width: 100%;
+  height: 90%;
 `
 const Paragraph1 = styled.div`
   grid-column: 1 / span 2;
@@ -61,7 +59,7 @@ const Paragraph1 = styled.div`
 `
 
 const Paragraph2 = styled.div`
-  grid-column: 1 / span 1;
+  grid-column: 1 / span 2;
   grid-row: 2 / span 1;
   @media (max-width: 1000px) {
     grid-row: 3 / span 1;
@@ -82,7 +80,7 @@ const Paragraph4 = styled.div`
   }
 `
 const Paragraph5 = styled.div`
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 1;
   grid-row: 5 / span 1;
   @media (max-width: 1000px) {
     grid-row: 6 / span 1;
