@@ -52,15 +52,22 @@ const ToggleIcon = styled(FontAwesomeIcon)`
 
 const Logo = styled(Img)`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 2rem;
   height: 100%;
-
   background-size: cover;
+  margin-top: 2px;
 
   @media screen and (max-width: 736px) {
     left: 1rem;
-    width: 80px;
+    margin: 1px 0;
+
+    & img {
+      height: 60px !important;
+    }
   }
 `
 
