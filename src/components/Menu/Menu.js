@@ -52,15 +52,42 @@ const ToggleIcon = styled(FontAwesomeIcon)`
 
 const Logo = styled(Img)`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 2rem;
   height: 100%;
-
   background-size: cover;
+  margin-top: 10px;
+
+  @media screen and (max-width: 1440px) {
+    margin-top: 3px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 2px;
+  }
 
   @media screen and (max-width: 736px) {
     left: 1rem;
-    width: 80px;
+    margin: 1px 0;
+
+    & img {
+      height: 60px !important;
+    }
+  }
+`
+
+const LogoText = styled.div`
+  position: absolute;
+  top: 0;
+  left: 7rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+
+  @media screen and (max-width: 736px) {
+    left: 6rem;
   }
 `
 
@@ -88,6 +115,7 @@ class Menu extends React.Component {
       PropTypes.node,
     ]),
     logo: PropTypes.object,
+    logoText: PropTypes.string,
   }
 
   constructor(props) {
@@ -101,11 +129,12 @@ class Menu extends React.Component {
   }
 
   render() {
-    const { children, logo } = this.props
+    const { children, logo, logoText } = this.props
 
     return (
       <MenuContainer>
         <Logo resolutions={logo} />
+        <LogoText>{logoText}</LogoText>
         {children && (
           <React.Fragment>
             <LinkList>{children}</LinkList>

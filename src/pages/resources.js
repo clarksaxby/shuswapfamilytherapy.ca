@@ -1,8 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 import ContentPage from '../components/ContentPage'
 import Content, { Section } from '../components/Content'
+
+import cmhaLogo from './images/cmha-logo.svg'
 
 const HabitWrapper = styled.div`
   display: grid;
@@ -38,8 +42,101 @@ const Title = styled.h3`
   margin: 0px;
 `
 
-const Resources = () => (
+const ResourcesList = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`
+
+const ResourceLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  flex: 1;
+  flex-grow: 1;
+  flex-basis: auto;
+
+  color: #7a7d86;
+  text-decoration: none;
+  font-size: 1.5rem;
+
+  min-width: 15rem;
+  max-width: 15rem;
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+
+  /* border: solid 1px #dde1eb; */
+  border-radius: 0.325rem;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    color: #a3a9e7;
+  }
+`
+
+const ResourceGatsbyImg = styled(Img)`
+  width: 100%;
+`
+
+const ResourceImg = styled.img`
+  width: 200px;
+`
+
+const Resources = ({ data }) => (
   <Content>
+    <Section>
+      <ContentPage title="Resources">
+        <ResourcesList>
+          <ResourceLink
+            href="https://AnxietyBC.com"
+            target="_blank"
+            title="AnxietyBC"
+          >
+            <ResourceGatsbyImg
+              resolutions={data.anxietyBcLogo.childImageSharp.resolutions}
+              alt="AnxietyBC"
+            />
+          </ResourceLink>
+          <ResourceLink
+            href="https://cmha.ca"
+            target="_blank"
+            title="Canadian Mental Health Association"
+          >
+            <ResourceImg
+              src={cmhaLogo}
+              alt="Canadian Mental Health Association"
+            />
+          </ResourceLink>
+          <ResourceLink
+            href="https://www.gottman.com"
+            target="_blank"
+            title="The Gottman Institute"
+          >
+            <ResourceGatsbyImg
+              resolutions={data.gottmanLogo.childImageSharp.resolutions}
+              alt="The Gottman Institute"
+            />
+          </ResourceLink>
+          <ResourceLink
+            href="https://www.shuswapcounselling.ca"
+            target="_blank"
+            title="Shuswap Clinical Counselling Centre"
+          >
+            <ResourceGatsbyImg
+              resolutions={data.scccLogo.childImageSharp.resolutions}
+              alt="Shuswap Clinical Counselling Centre"
+            />
+          </ResourceLink>
+        </ResourcesList>
+      </ContentPage>
+    </Section>
     <Section>
       <ContentPage
         title="Winter Blues"
@@ -103,4 +200,38 @@ const Resources = () => (
   </Content>
 )
 
+Resources.propTypes = {
+  data: PropTypes.object,
+}
+
 export default Resources
+
+export const query = graphql`
+  query ResourcesQuery {
+    anxietyBcLogo: file(
+      relativePath: { eq: "pages/images/anxietybc-logo.jpg" }
+    ) {
+      childImageSharp {
+        resolutions(width: 200, quality: 100) {
+          ...GatsbyImageSharpResolutions_noBase64
+        }
+      }
+    }
+
+    gottmanLogo: file(relativePath: { eq: "pages/images/gottman-logo.png" }) {
+      childImageSharp {
+        resolutions(width: 200) {
+          ...GatsbyImageSharpResolutions_noBase64
+        }
+      }
+    }
+
+    scccLogo: file(relativePath: { eq: "pages/images/sccc-logo.png" }) {
+      childImageSharp {
+        resolutions(width: 100) {
+          ...GatsbyImageSharpResolutions_noBase64
+        }
+      }
+    }
+  }
+`
