@@ -22,7 +22,7 @@ const Content = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    padding: 0;
+    padding: 0.5rem 0;
     max-width: 100%;
   }
 `

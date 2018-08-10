@@ -9,22 +9,21 @@ import overlay from '../layouts/images/overlay.png'
 const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.2fr repeat(4, 0.7fr);
   grid-gap: 10px 20px;
+  margin-bottom: 40px;
+
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 0.3fr repeat(4, 0.5fr);
     grid-gap: 10px 0px;
   }
-  @media (max-width: 450px) {
-    grid-template-rows: 1fr 0.3fr repeat(4, 0.5fr);
+  @media screen and (max-width: 565px) {
     grid-gap: 10px 0px;
   }
 `
 const ImageStyleAfter = styled.div`
   position: relative;
   grid-column: 2 / span 1;
-  grid-row: 2 / span 3;
+  grid-row: 3 / span 3;
   justify-self: center;
   align-self: center;
 
@@ -64,7 +63,7 @@ const Paragraph1 = styled.div`
 `
 
 const Paragraph2 = styled.div`
-  grid-column: 1 / span 1;
+  grid-column: 1 / span 2;
   grid-row: 2 / span 1;
   @media (max-width: 1000px) {
     grid-row: 3 / span 1;
@@ -85,7 +84,7 @@ const Paragraph4 = styled.div`
   }
 `
 const Paragraph5 = styled.div`
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 1;
   grid-row: 5 / span 1;
   @media (max-width: 1000px) {
     grid-row: 6 / span 1;
