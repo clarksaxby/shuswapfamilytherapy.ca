@@ -71,6 +71,18 @@ const Logo = styled(Img)`
   }
 `
 
+const LogoText = styled.div`
+  position: absolute;
+  top: 0;
+  left: 7rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+
+  @media screen and (max-width: 736px) {
+    left: 6rem;
+  }
+`
+
 const LinkList = styled.ul`
   list-style: none;
   padding: 0;
@@ -95,6 +107,7 @@ class Menu extends React.Component {
       PropTypes.node,
     ]),
     logo: PropTypes.object,
+    logoText: PropTypes.string,
   }
 
   constructor(props) {
@@ -108,11 +121,12 @@ class Menu extends React.Component {
   }
 
   render() {
-    const { children, logo } = this.props
+    const { children, logo, logoText } = this.props
 
     return (
       <MenuContainer>
         <Logo resolutions={logo} />
+        <LogoText>{logoText}</LogoText>
         {children && (
           <React.Fragment>
             <LinkList>{children}</LinkList>
