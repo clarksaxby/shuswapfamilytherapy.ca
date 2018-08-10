@@ -59,7 +59,15 @@ const Logo = styled(Img)`
   left: 2rem;
   height: 100%;
   background-size: cover;
-  margin-top: 2px;
+  margin-top: 10px;
+
+  @media screen and (max-width: 1440px) {
+    margin-top: 3px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 2px;
+  }
 
   @media screen and (max-width: 736px) {
     left: 1rem;
