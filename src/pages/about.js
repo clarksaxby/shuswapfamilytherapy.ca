@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Kendra from '../layouts/images/kendra.png'
+import Img from 'gatsby-image'
 import ContentPage from '../components/ContentPage'
 import Content, { Section } from '../components/Content'
 import overlay from '../layouts/images/overlay.png'
@@ -26,10 +27,17 @@ const ImageStyleAfter = styled.div`
   justify-self: center;
   align-self: center;
 
+  width: 100%;
+  height: 100%;
+
   @media (max-width: 1000px) {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
   }
+`
+const Image = styled(Img)`
+  width: 100%;
+  height: 100%;
 
   &:after {
     content: '';
@@ -37,7 +45,7 @@ const ImageStyleAfter = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 7px);
+    height: 100%;
     background-image: url(${overlay}),
       linear-gradient(
         45deg,
@@ -45,10 +53,6 @@ const ImageStyleAfter = styled.div`
         rgba(170, 143, 255, 0.25)
       );
   }
-`
-const Image = styled.img`
-  width: 100%;
-  height: 90%;
 `
 const Paragraph1 = styled.div`
   grid-column: 1 / span 2;
@@ -87,7 +91,7 @@ const Paragraph5 = styled.div`
   }
 `
 
-const About = () => (
+const About = ({ data }) => (
   <Content>
     <Section>
       <ContentPage
@@ -97,7 +101,10 @@ const About = () => (
       >
         <ContentWrapper>
           <ImageStyleAfter>
-            <Image src={Kendra} alt="Kendra" />
+            <Image
+              sizes={data.kendraImage.childImageSharp.sizes}
+              alt="Kendra"
+            />
           </ImageStyleAfter>
 
           <Paragraph1>
@@ -156,4 +163,20 @@ const About = () => (
   </Content>
 )
 
+About.propTypes = {
+  data: PropTypes.object,
+}
+
 export default About
+
+export const query = graphql`
+  query AboutQuery {
+    kendraImage: file(relativePath: { eq: "layouts/images/kendra.png" }) {
+      childImageSharp {
+        sizes(maxWidth: 1280) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+`

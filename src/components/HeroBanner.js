@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import Img from 'gatsby-image'
 import Button from './Button'
 import overlay from '../layouts/images/overlay.png'
 
@@ -87,15 +88,19 @@ const HeroImageContainer = styled.div`
   }
 `
 
-const HeroImage = styled.img`
-  transition: transform 2.1875s ease-out, filter 2.1875s ease-out;
-  object-fit: cover;
+const HeroImage = styled(Img)`
+  /* transition: transform 2.1875s ease-out, filter 2.1875s ease-out; */
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+
+  & > img {
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
 `
 
 const Subtitle = styled.p`
@@ -106,7 +111,7 @@ const HeroBanner = ({ image, title, subtitle, action, onAction }) => (
   <HeroContainer image={image}>
     {image && (
       <HeroImageContainer>
-        <HeroImage src={image} />
+        <HeroImage sizes={image} style={{ position: 'absolute' }} />
       </HeroImageContainer>
     )}
     <HeroTitle>{title}</HeroTitle>
@@ -120,7 +125,7 @@ const HeroBanner = ({ image, title, subtitle, action, onAction }) => (
 )
 
 HeroBanner.propTypes = {
-  image: PropTypes.string,
+  image: PropTypes.object,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   action: PropTypes.string,

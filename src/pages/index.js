@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import queryString from 'query-string'
 
@@ -6,10 +7,6 @@ import HeroBanner from '../components/HeroBanner'
 import ContentPage from '../components/ContentPage'
 import Teaser from '../components/Teaser'
 
-import heroImage from './images/lake.jpg'
-import couplesImage from './images/couples-pricing.jpg'
-import familiesImage from './images/families-pricing.jpg'
-import individualImage from './images/individual-pricing.jpg'
 import ContactForm from '../components/ContactForm'
 import Content, { Section } from '../components/Content'
 
@@ -64,7 +61,7 @@ const Author = styled.div`
   padding-top: 0.5em;
 `
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   let redirect
   if (
     typeof window !== 'undefined' &&
@@ -80,7 +77,7 @@ const IndexPage = () => {
       <Section>
         <HeroBanner
           title="Discover"
-          image={heroImage}
+          image={data.bannerImage.childImageSharp.sizes}
           subtitle="meaningful connections, creative solutions, and new possibilities"
         />
       </Section>
@@ -90,7 +87,7 @@ const IndexPage = () => {
             <Service>
               <Teaser
                 btnTitle="Couples"
-                img={couplesImage}
+                img={data.couplesImage.childImageSharp.resolutions}
                 imgText="Couples therapy is for any couple, dating, engaged, married, common-law who are looking for positive solutions to challenges they are facing, and creative ways to enrich their relationship. Couples therapy can also help individuals navigate the unique challenges and opportunities of divorce/separation, co-parenting, and blended families."
                 imgPosition="right bottom"
               />
@@ -98,14 +95,14 @@ const IndexPage = () => {
             <Service>
               <Teaser
                 btnTitle="Families"
-                img={familiesImage}
+                img={data.familiesImage.childImageSharp.resolutions}
                 imgText="Family Therapy provides an opportunity for all family members to have a voice and share their unique perspective. Family sessions will incorporate creative activities and strategies to build connections, celebrate differences, and grow understanding."
               />
             </Service>
             <Service>
               <Teaser
                 btnTitle="Individuals"
-                img={individualImage}
+                img={data.individualImage.childImageSharp.resolutions}
                 imgText="Individual therapy is available for anyone looking to make meaningful connections, changes, or experience growth in their life. Issues may include: anxiety, depression, mental health challenges, stressful life events, family or relationship concerns."
               />
             </Service>
@@ -158,5 +155,51 @@ const IndexPage = () => {
     </Content>
   )
 }
+
+IndexPage.propTypes = {
+  data: PropTypes.any,
+}
+
+export const query = graphql`
+  query IndexQuery {
+    couplesImage: file(
+      relativePath: { eq: "pages/images/couples-pricing.jpg" }
+    ) {
+      childImageSharp {
+        resolutions(width: 300, height: 300) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    }
+
+    familiesImage: file(
+      relativePath: { eq: "pages/images/families-pricing.jpg" }
+    ) {
+      childImageSharp {
+        resolutions(width: 300, height: 300) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    }
+
+    individualImage: file(
+      relativePath: { eq: "pages/images/individual-pricing.jpg" }
+    ) {
+      childImageSharp {
+        resolutions(width: 300, height: 300) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    }
+
+    bannerImage: file(relativePath: { eq: "pages/images/lake.jpg" }) {
+      childImageSharp {
+        sizes(maxWidth: 1280) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
