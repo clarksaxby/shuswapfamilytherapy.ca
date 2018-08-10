@@ -102,7 +102,10 @@ const About = ({ data }) => (
       >
         <ContentWrapper>
           <ImageStyleAfter>
-            <Image sizes={data.kendraImage.childImageSharp.sizes} alt="Kendra" />
+            <Image
+              sizes={data.kendraImage.childImageSharp.sizes}
+              alt="Kendra"
+            />
           </ImageStyleAfter>
 
           <Paragraph1>
@@ -162,21 +165,19 @@ const About = ({ data }) => (
 )
 
 About.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
 }
 
 export default About
 
 export const query = graphql`
   query AboutQuery {
-    kendraImage: file(
-      relativePath: { eq: "layouts/images/kendra.png" }
-    ) {
+    kendraImage: file(relativePath: { eq: "layouts/images/kendra.png" }) {
       childImageSharp {
         sizes(maxWidth: 1280) {
           ...GatsbyImageSharpSizes
         }
       }
     }
-  }  
+  }
 `
