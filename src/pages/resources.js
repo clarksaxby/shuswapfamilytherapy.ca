@@ -140,7 +140,7 @@ const Resources = ({ data }) => (
     <Section>
       <ContentPage
         title="Winter Blues"
-        subtitle="Kendra Kieft, MAMFT, RCC"
+        subtitle="Kendra Kieft, MA, RCC"
         footer="Shuswap Couple & Family Therapy 2018"
       >
         <HabitWrapper>

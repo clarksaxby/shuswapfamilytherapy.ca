@@ -96,7 +96,7 @@ const About = ({ data }) => (
     <Section>
       <ContentPage
         title="Kendra Kieft"
-        subtitle="MAMFT, RCC"
+        subtitle="MA, RCC"
         footer="Shuswap Couple & Family Therapy 2018"
       >
         <ContentWrapper>
