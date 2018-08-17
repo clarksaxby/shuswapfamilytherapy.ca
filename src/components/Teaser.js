@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Button from './Button'
 import overlay from '../layouts/images/overlay.png'
+import Link from 'gatsby-link'
 
 const TeaserWrapper = styled.div`
   display: grid;
@@ -58,7 +59,7 @@ const TextMessage = styled.p`
   }
 `
 
-const TeaserButton = styled(Button)`
+const TeaserButton = styled(Link)`
   grid-column: 2 / span 1;
 `
 
@@ -76,7 +77,9 @@ const Teaser = props => {
       </ImageZoomWrapper>
 
       <TextMessage>{props.imgText}</TextMessage>
-      <TeaserButton next>{props.btnTitle}</TeaserButton>
+      <TeaserButton {...props}>
+        <Button next>{props.btnTitle}</Button>
+      </TeaserButton>
     </TeaserWrapper>
   )
 }

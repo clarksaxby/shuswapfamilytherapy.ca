@@ -96,7 +96,7 @@ const About = ({ data }) => (
     <Section>
       <ContentPage
         title="Kendra Kieft"
-        subtitle="MAMFT, RCC"
+        subtitle="MA, RCC"
         footer="Shuswap Couple & Family Therapy 2018"
       >
         <ContentWrapper>
@@ -142,8 +142,9 @@ const About = ({ data }) => (
             Common Issues I work with:
             <ul>
               <li>Family & Couple Relationships </li>
-              <li> Anxiety in Adults and/or Children</li>
+              <li>Anxiety in Adults and/or Children</li>
               <li>Depression in Adults and/or Children</li>
+              <li>Complex trauma and Post-traumatic stress disorder (PTSD)</li>
               <li>Self-harm and Suicidal Ideation</li>
               <li>Self-Esteem and Self-Worth</li>
               <li>Stress Management</li>
