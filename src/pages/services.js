@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import ContentPage from '../components/ContentPage'
 import Content, { Section } from '../components/Content'
 
-// grid-template-rows: 1fr 1fr;
-const ContentWrapper = styled.div`
+const PriceWrapper = styled.div`
+  padding: 40px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px 20px;
+  grid-column-gap: 30px;
   margin-bottom: 40px;
   justify-items: center;
 
@@ -15,22 +15,17 @@ const ContentWrapper = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 700px) {
     grid-template-columns: 1fr;
-    grid-gap: 10px 0px;
-  }
-  @media screen and (max-width: 565px) {
-    grid-gap: 10px 0px;
+    grid-gap: 20px 10px;
   }
 `
 
 const Title = styled.h3`
   margin: 0px;
 `
-// const Couples = styled.div``
-// const Family = styled.div``
 
-const Services = props => (
+const Services = () => (
   <Content>
     <Section>
       <ContentPage
@@ -38,7 +33,7 @@ const Services = props => (
         subtitle="Services may be covered in part or in full by your extended health plan, please inquire of your specific plan if counselling sessions by a Registered Clinical Counsellor (RCC) are eligible for coverage."
         footer="Shuswap Couple & Family Therapy 2018"
       >
-        <ContentWrapper {...props}>
+        <PriceWrapper>
           <div>
             <Title>Individuals</Title> $110 for 50 minute sessions
           </div>
@@ -48,7 +43,7 @@ const Services = props => (
           <div>
             <Title>Family</Title> $125 for 50 minute sessions
           </div>
-        </ContentWrapper>
+        </PriceWrapper>
       </ContentPage>
     </Section>
   </Content>
