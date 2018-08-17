@@ -91,7 +91,7 @@ const IndexPage = ({ data }) => {
                 img={data.couplesImage.childImageSharp.resolutions}
                 imgText="Couples therapy is for any couple, dating, engaged, married, common-law who are looking for positive solutions to challenges they are facing, and creative ways to enrich their relationship. Couples therapy can also help individuals navigate the unique challenges and opportunities of divorce/separation, co-parenting, and blended families."
                 imgPosition="right bottom"
-                to="/about"
+                to="/services"
               />
             </Service>
             <Service>
@@ -100,7 +100,7 @@ const IndexPage = ({ data }) => {
                 btnTitle="Families"
                 img={data.familiesImage.childImageSharp.resolutions}
                 imgText="Family Therapy provides an opportunity for all family members to have a voice and share their unique perspective. Family sessions will incorporate creative activities and strategies to build connections, celebrate differences, and grow understanding."
-                to="/about"
+                to="/services"
               />
             </Service>
             <Service>
@@ -109,7 +109,7 @@ const IndexPage = ({ data }) => {
                 btnTitle="Individuals"
                 img={data.individualImage.childImageSharp.resolutions}
                 imgText="Individual therapy is available for anyone looking to make meaningful connections, changes, or experience growth in their life. Issues may include: anxiety, depression, mental health challenges, stressful life events, family or relationship concerns."
-                to="/about"
+                to="/services"
               />
             </Service>
           </Services>
