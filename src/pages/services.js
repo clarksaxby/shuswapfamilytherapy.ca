@@ -40,13 +40,13 @@ const Services = props => (
       >
         <ContentWrapper {...props}>
           <div>
-            <Title>Individuals</Title> 50 minute sessions 110
+            <Title>Individuals</Title> $110 for 50 minute sessions
           </div>
           <div>
-            <Title>Couples</Title> 50 minute sessions 125
+            <Title>Couples</Title> $125 for 50 minute sessions
           </div>
           <div>
-            <Title>Family</Title> 50 minute sessions 125
+            <Title>Family</Title> $125 for 50 minute sessions
           </div>
         </ContentWrapper>
       </ContentPage>
