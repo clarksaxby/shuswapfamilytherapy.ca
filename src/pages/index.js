@@ -138,7 +138,7 @@ const IndexPage = ({ data }) => {
       <Section>
         <ContentPage
           title="Make an Appointment"
-          subtitle="1-120 Harbourfront Drive NE Salmon Arm BC V1E2T3"
+          subtitle="1-120 Harbourfront Drive NE Salmon Arm BC V1E 2T3"
           colored
           footer="Shuswap Couple &amp; Family Therapy &copy; 2018"
         >
