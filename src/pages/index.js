@@ -138,14 +138,14 @@ const IndexPage = ({ data }) => {
       <Section>
         <ContentPage
           title="Make an Appointment"
-          subtitle="#3-781 Marine Park Drive, Salmon Arm, BC V1E2W7"
+          subtitle="1-120 Harbourfront Drive NE Salmon Arm BC V1E2T3"
           colored
           footer="Shuswap Couple &amp; Family Therapy &copy; 2018"
         >
           <ContactForm
             action={
               'https://mailhound.twostoryrobot.com?key=' +
-              process.env.MAILHOUND_KEY
+              process.env.GATSBY_MAILHOUND_KEY
             }
             showThanks={
               typeof window !== 'undefined' &&
