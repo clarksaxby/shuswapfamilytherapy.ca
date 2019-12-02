@@ -7,7 +7,7 @@ These have to be available to Gatsby at build-time.
 
 ```bash
 STORYBOOK_MAILHOUND_KEY= # Mailhound key to use in stories (Optional)
-MAILHOUND_KEY= # Mailhound key (Required)
+GATSBY_MAILHOUND_KEY= # Mailhound key (Required)
 ```
 
 ## Scripts
