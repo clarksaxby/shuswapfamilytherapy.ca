@@ -43,7 +43,7 @@ const Icons = props => {
         </a>
       </IconsStyle>
       <IconsStyle>
-        <a href="mailto:k2kieft@gmail.com">
+        <a href="mailto:kendra@shuswapcounselling.ca">
           <Icon icon={faEnvelope} />
         </a>
       </IconsStyle>
