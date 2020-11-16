@@ -48,7 +48,7 @@ const ThanksMessage = styled.div`
   text-align: center;
   margin-bottom: 5%;
 `
-const ContactForm = ({ action, showThanks, redirectUrl }) => {
+const ContactForm = ({ showThanks, redirectUrl }) => {
   return (
     <div>
       {showThanks && (
@@ -56,7 +56,7 @@ const ContactForm = ({ action, showThanks, redirectUrl }) => {
           Thank you for your inquiry, your message has been sent.
         </ThanksMessage>
       )}
-      <FormWrapper method="POST" action={action}>
+      <FormWrapper method="POST" action="POST" data-netlify="true">
         <input
           type="hidden"
           name="_subject"
@@ -74,7 +74,6 @@ const ContactForm = ({ action, showThanks, redirectUrl }) => {
 }
 
 ContactForm.propTypes = {
-  action: PropTypes.string.isRequired,
   showThanks: PropTypes.bool,
   redirectUrl: PropTypes.string,
 }

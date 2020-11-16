@@ -14,11 +14,6 @@
     "prettier-check": "prettier --list-different '**/*.js'",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier-check && npm run eslint"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/TwoStoryRobot/shuswapfamilytherapy.ca"
