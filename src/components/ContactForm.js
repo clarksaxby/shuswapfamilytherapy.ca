@@ -37,20 +37,25 @@ const TextareaStyle = styled(Textarea)`
     color: white;
   }
 `
-// const ButtonStyle = styled(Button)`
-//   grid-column: 3 / span 2;
-//   grid-row-start: 4;
-//   padding: 0px;
-// `
+const ButtonStyle = styled(Button)`
+  grid-column: 3 / span 2;
+  grid-row-start: 4;
+  padding: 0px;
+`
 
-// const ThanksMessage = styled.div`
-//   color: white;
-//   text-align: center;
-//   margin-bottom: 5%;
-// `
-const ContactForm = () => {
+const ThanksMessage = styled.div`
+  color: white;
+  text-align: center;
+  margin-bottom: 5%;
+`
+const ContactForm = ({ showThanks, redirectUrl }) => {
   return (
     <div>
+      {showThanks && (
+        <ThanksMessage>
+          Thank you for your inquiry, your message has been sent.
+        </ThanksMessage>
+      )}
       <FormWrapper action="POST" data-netlify="true">
         <input
           type="hidden"
@@ -60,7 +65,9 @@ const ContactForm = () => {
         <InputStyleLeft placeholder="Name" name="name" color="white" />
         <InputStyleRight placeholder="Email" name="email" color="white" />
         <TextareaStyle placeholder="Message" name="message" color="white" />
-        <input type="submit" value="send" />
+        <input type="text" name="_gotcha" style={{ display: 'none' }} />
+        <ButtonStyle color="white">Send</ButtonStyle>
+        <input type="hidden" name="_next" value={redirectUrl} />
       </FormWrapper>
     </div>
   )
