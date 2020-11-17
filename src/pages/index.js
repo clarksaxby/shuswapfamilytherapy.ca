@@ -146,6 +146,14 @@ const IndexPage = ({ data }) => {
             action={
               'POST'
             }
+            showThanks={
+              typeof window !== 'undefined' &&
+              window.location.search.includes('thanks=true')
+            }
+            redirectUrl={`${typeof window !== 'undefined' &&
+              redirect.url}?${queryString.stringify(
+              typeof window !== 'undefined' && redirect.query
+            )}`}
           />
         </ContentPage>
       </Section>
