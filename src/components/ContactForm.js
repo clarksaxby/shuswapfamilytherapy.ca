@@ -50,36 +50,25 @@ const ThanksMessage = styled.div`
 `
 const ContactForm = ({ showThanks, redirectUrl }) => {
   return (
-    // <div>
-    //   {showThanks && (
-    //     <ThanksMessage>
-    //       Thank you for your inquiry, your message has been sent.
-    //     </ThanksMessage>
-    //   )}
-    //   <FormWrapper method="POST" action="POST" data-netlify="true">
-    //     <input
-    //       type="hidden"
-    //       name="_subject"
-    //       value="New message for Shuswap Family Therapy"
-    //     />
-    //     <InputStyleLeft placeholder="Name" name="name" color="white" />
-    //     <InputStyleRight placeholder="Email" name="email" color="white" />
-    //     <TextareaStyle placeholder="Message" name="message" color="white" />
-    //     <input type="text" name="_gotcha" style={{ display: 'none' }} />
-    //     <ButtonStyle color="white">Send</ButtonStyle>
-    //     <input type="hidden" name="_next" value={redirectUrl} />
-    //   </FormWrapper>
-
-      <form action="POST" data-netlify="true">
-        <div className="fields">
-          <input type="text" name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
-          <textarea name="message" placeholder="Message" rows="7"></textarea>
-        </div>
-        <ul className="actions">
-          <li><input type="submit" value="Send Message" /></li>
-        </ul>
-      </form>
+    <div>
+      {showThanks && (
+        <ThanksMessage>
+          Thank you for your inquiry, your message has been sent.
+        </ThanksMessage>
+      )}
+      <FormWrapper method="POST" action="POST" data-netlify="true">
+        <input
+          type="hidden"
+          name="_subject"
+          value="New message for Shuswap Family Therapy"
+        />
+        <InputStyleLeft placeholder="Name" name="name" color="white" />
+        <InputStyleRight placeholder="Email" name="email" color="white" />
+        <TextareaStyle placeholder="Message" name="message" color="white" />
+        <input type="text" name="_gotcha" style={{ display: 'none' }} />
+        <ButtonStyle color="white">Send</ButtonStyle>
+        <input type="hidden" name="_next" value={redirectUrl} />
+      </FormWrapper>
     </div>
   )
 }
