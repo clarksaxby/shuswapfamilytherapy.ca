@@ -8,6 +8,7 @@ storiesOf('Contact Form', module)
   .add('Default empty form no functionality', () => (
     <ContactForm
       action="POST"
+      data-netlify="true"
     />
   ))
   // .add('form with thankyou message', () => (

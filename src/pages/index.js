@@ -143,8 +143,8 @@ const IndexPage = ({ data }) => {
           footer="Shuswap Couple &amp; Family Therapy &copy; 2018"
         >
           <ContactForm
-            action={"POST"}
-            data-netlify={"true"}
+            action="POST"
+            data-netlify="true"
             showThanks={
               typeof window !== 'undefined' &&
               window.location.search.includes('thanks=true')
