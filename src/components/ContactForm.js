@@ -58,9 +58,9 @@ const ContactForm = () => {
           value="New message for Shuswap Family Therapy"
         />
         <InputStyleLeft placeholder="Name" name="name" color="white" />
-        <InputStyleRight placeholder="Email" name="email" color="white" />
+        {/* <InputStyleRight placeholder="Email" name="email" color="white" />
         <TextareaStyle placeholder="Message" name="message" color="white" />
-        <input type="submit" value="send" />
+        <input type="submit" value="send" /> */}
       </FormWrapper>
     </div>
   )
