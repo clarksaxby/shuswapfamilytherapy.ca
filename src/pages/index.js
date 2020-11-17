@@ -144,17 +144,8 @@ const IndexPage = ({ data }) => {
         >
           <ContactForm
             action={
-              'https://mailhound.twostoryrobot.com?key=' +
-              process.env.GATSBY_MAILHOUND_KEY
+              'POST'
             }
-            showThanks={
-              typeof window !== 'undefined' &&
-              window.location.search.includes('thanks=true')
-            }
-            redirectUrl={`${typeof window !== 'undefined' &&
-              redirect.url}?${queryString.stringify(
-              typeof window !== 'undefined' && redirect.query
-            )}`}
           />
         </ContentPage>
       </Section>
