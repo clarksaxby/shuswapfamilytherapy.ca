@@ -142,11 +142,11 @@ const IndexPage = ({ data }) => {
           colored
           footer="Shuswap Couple &amp; Family Therapy &copy; 2018"
         >
-          <ContactForm
+          {/* <ContactForm
             action={
               'POST'
             }
-          />
+          /> */}
         </ContentPage>
       </Section>
     </Content>
