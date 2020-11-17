@@ -6,7 +6,9 @@ import ContactForm from '../components/ContactForm'
 storiesOf('Contact Form', module)
   .addDecorator(host({ background: '#90B6DF' }))
   .add('Default empty form no functionality', () => (
-    <ContactForm />
+    <ContactForm
+      action="POST"
+    />
   ))
   // .add('form with thankyou message', () => (
   //   <ContactForm

@@ -56,7 +56,7 @@ const ContactForm = ({ showThanks, redirectUrl }) => {
           Thank you for your inquiry, your message has been sent.
         </ThanksMessage>
       )}
-      <FormWrapper method="POST" action="POST" data-netlify="true">
+      <FormWrapper action="POST" data-netlify="true">
         <input
           type="hidden"
           name="_subject"
